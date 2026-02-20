@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FAQItem {
   question: string;
@@ -8,64 +9,56 @@ interface FAQItem {
   answerText: string | React.ReactNode;
 }
 
-const faqData: FAQItem[] = [
-  {
-    question: 'Чи є трансфер індивідуальним, без попутників?',
-    answerTitle: 'ТАК',
-    answerText: 'Ми надаємо індивідуальний трансфер без попутників. Автомобіль замовляється виключно для вас, вашої родини або групи.',
-  },
-  {
-    question: 'З яких міст і в які міста можливий трансфер?',
-    answerTitle: 'МИ ВИКОНУЄМО ТРАНСФЕРИ ПО УКРАЇНІ, МІЖ УКРАЇНОЮ ТА ЄВРОПОЮ, А ТАКОЖ МІЖ МІСТАМИ ЄВРОПИ',
-    answerText: 'Маршрут може починатися або завершуватися у Львові, а також проходити між іншими містами — за індивідуальним запитом.',
-  },
-  {
-    question: 'Чи можна замовити трансфер для сім\u02BCї з дітьми?',
-    answerTitle: 'ТАК. НАШ СЕРВІС ПІДХОДИТЬ ДЛЯ ПОЇЗДОК З ДІТЬМИ.',
-    answerText: 'За попереднім запитом можливе встановлення дитячого автокрісла. Просимо повідомити вік дитини під час замовлення.',
-  },
-  {
-    question: 'Чи можна подорожувати з домашніми тваринами?',
-    answerTitle: 'ТАК.',
-    answerText: 'Перевезення домашніх тварин можливе лише в контейнері та за попереднім погодженням. Будь ласка, повідомте про тварину під час оформлення заявки.',
-  },
-  {
-    question: 'Чи можна робити зупинки під час поїздки?',
-    answerTitle: 'ТАК.',
-    answerText: 'Можливі короткі зупинки або коригування маршруту за домовленістю. Усі деталі узгоджуються перед поїздкою.',
-  },
-  {
-    question: 'Як формується вартість трансферу?',
-    answerTitle: 'ЦІНА РОЗРАХОВУЄТЬСЯ ІНДИВІДУАЛЬНО ПІСЛЯ УТОЧНЕННЯ ДЕТАЛЕЙ',
-    answerText: (
-      <>
-        Вартість залежить від:
-        <br />— маршруту та відстані
-        <br />— тривалості поїздки
-        <br />— обраного автомобіля
-        <br />— додаткових побажань
-      </>
-    ),
-  },
-  {
-    question: 'Як заздалегідь забронювати трансфер?',
-    answerTitle: 'TELEGRAM ЧИ ДЗВІНОК',
-    answerText: (
-      <>
-        Ви можете залишити заявку в telegram боті або зв&apos;язатися з нами зручним способом.
-        <br />Ми узгоджуємо маршрут, деталі поїздки та підтверджуємо замовлення.
-      </>
-    ),
-  },
-  {
-    question: 'Чи підходить сервіс для бізнес-поїздок?',
-    answerTitle: 'ТАК',
-    answerText: 'Наш трансфер часто обирають для бізнес-поїздок, зустрічей та подій, де важливі комфорт, пунктуальність і високий рівень сервісу.',
-  },
-];
-
 export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const { t } = useLanguage();
+
+  const faqData: FAQItem[] = useMemo(() => [
+    {
+      question: t('faqQ1'),
+      answerTitle: t('faqA1Title'),
+      answerText: t('faqA1Text'),
+    },
+    {
+      question: t('faqQ2'),
+      answerTitle: t('faqA2Title'),
+      answerText: t('faqA2Text'),
+    },
+    {
+      question: t('faqQ3'),
+      answerTitle: t('faqA3Title'),
+      answerText: t('faqA3Text'),
+    },
+    {
+      question: t('faqQ4'),
+      answerTitle: t('faqA4Title'),
+      answerText: t('faqA4Text'),
+    },
+    {
+      question: t('faqQ5'),
+      answerTitle: t('faqA5Title'),
+      answerText: t('faqA5Text'),
+    },
+    {
+      question: t('faqQ6'),
+      answerTitle: t('faqA6Title'),
+      answerText: t('faqA6Text').split('\n').map((line, i) => (
+        <span key={i}>{line}{i < t('faqA6Text').split('\n').length - 1 && <br />}</span>
+      )),
+    },
+    {
+      question: t('faqQ7'),
+      answerTitle: t('faqA7Title'),
+      answerText: t('faqA7Text').split('\n').map((line, i) => (
+        <span key={i}>{line}{i < t('faqA7Text').split('\n').length - 1 && <br />}</span>
+      )),
+    },
+    {
+      question: t('faqQ8'),
+      answerTitle: t('faqA8Title'),
+      answerText: t('faqA8Text'),
+    },
+  ], [t]);
 
   const renderAnswerPanel = (index: number) => {
     if (activeIndex !== index) return null;
@@ -104,7 +97,7 @@ export default function FAQSection() {
           className="text-[30px] md:text-[60px] text-[#070707] font-black text-center leading-[100%] uppercase"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
-          НАЙЧАСТІШЕ ПИТАЮТЬ
+          {t('faqTitle')}
         </h2>
 
         {/* Desktop: two-column layout */}

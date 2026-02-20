@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function OtherServicesSection() {
+  const { t } = useLanguage();
   return (
     <section className="w-full bg-[#BCC4C7] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
       <div className="flex flex-col items-center gap-[40px] md:gap-[80px] w-full max-w-[1425px] mx-auto">
@@ -12,7 +14,7 @@ export default function OtherServicesSection() {
           className="text-[30px] md:text-[60px] text-[#070707] font-black text-center leading-[100%] uppercase w-full"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
-          Інші послуги
+          {t('otherServicesTitle')}
         </h2>
 
         {/* Row 1: Image Left + Content Right */}
@@ -26,7 +28,7 @@ export default function OtherServicesSection() {
           <div className="w-full lg:w-1/2 h-[166px] md:h-[366px]">
             <img 
               src="/images/services/rent-no-driver.png" 
-              alt="Оренда авто БЕЗ водія" 
+              alt={t('rentNoDriverTitle')} 
               className="w-full h-full object-cover"
             />
           </div>
@@ -47,7 +49,7 @@ export default function OtherServicesSection() {
                   className="text-[18px] md:text-[24px] text-[#070707] font-black leading-[120%]"
                   style={{ fontFamily: 'var(--font-nunito-sans)' }}
                 >
-                  Оренда авто БЕЗ водія
+                  {t('rentNoDriverTitle')}
                 </h3>
               </div>
 
@@ -56,9 +58,9 @@ export default function OtherServicesSection() {
                 className="text-[12px] md:text-[14px] text-[#070707] leading-[120%]"
                 style={{ fontFamily: 'var(--font-nunito-sans)' }}
               >
-                Оренда авто у Львові - зручний спосіб пересування містом та регіоном у власному ритмі. Ми пропонуємо сучасні, доглянуті автомобілі для щоденних поїздок, подорожей або ділових справ.
+                {t('rentNoDriverDesc1')}
                 <br /><br />
-                Прозорі умови оренди, гнучкі терміни та високий рівень сервісу гарантують комфорт і надійність у кожній поїздці.
+                {t('rentNoDriverDesc2')}
               </p>
             </div>
 
@@ -81,7 +83,7 @@ export default function OtherServicesSection() {
                 className="relative z-10 text-[12px] md:text-[22px] text-[#070707] lg:text-white lg:group-hover:text-[#070707] font-bold leading-[100%] uppercase transition-colors duration-300"
                 style={{ fontFamily: 'var(--font-unbounded)' }}
               >
-                ЗАМОВИТИ АВТО БЕЗ ВОДІЯ
+                {t('rentNoDriverButton')}
               </span>
             </Link>
           </div>
@@ -110,7 +112,7 @@ export default function OtherServicesSection() {
                   className="text-[18px] md:text-[24px] text-[#070707] font-black leading-[120%]"
                   style={{ fontFamily: 'var(--font-nunito-sans)' }}
                 >
-                  Оренда авто З водієм
+                  {t('rentWithDriverTitle')}
                 </h3>
               </div>
 
@@ -119,9 +121,9 @@ export default function OtherServicesSection() {
                 className="text-[12px] md:text-[14px] text-[#070707] leading-[120%]"
                 style={{ fontFamily: 'var(--font-nunito-sans)' }}
               >
-                Оренда авто з водієм у Львові - зручне рішення для комфортних і безпечних поїздок містом та за його межами. Ми пропонуємо сучасні автомобілі та професійних водіїв, які добре знають маршрути й завжди дотримуються графіка.
+                {t('rentWithDriverDesc1')}
                 <br /><br />
-                Послуга підходить для бізнес-поїздок, трансферу в готель, туристичних маршрутів і святкових подій. Гарантуємо високий рівень сервісу, комфорт і конфіденційність.
+                {t('rentWithDriverDesc2')}
               </p>
             </div>
 
@@ -144,7 +146,7 @@ export default function OtherServicesSection() {
                 className="relative z-10 text-[12px] md:text-[24px] text-[#070707] lg:text-white lg:group-hover:text-[#070707] font-bold leading-[100%] uppercase transition-colors duration-300"
                 style={{ fontFamily: 'var(--font-unbounded)' }}
               >
-                ЗАМОВИТИ АВТО З ВОДІЄМ
+                {t('rentWithDriverButton')}
               </span>
             </Link>
           </div>
@@ -153,7 +155,7 @@ export default function OtherServicesSection() {
           <div className="w-full lg:w-1/2 h-[166px] md:h-[366px]">
             <img 
               src="/images/services/rent-with-driver.png" 
-              alt="Оренда авто З водієм" 
+              alt={t('rentWithDriverTitle')} 
               className="w-full h-full object-cover"
             />
           </div>

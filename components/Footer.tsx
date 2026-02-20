@@ -97,7 +97,7 @@ export default function Footer() {
                   className="text-white text-xs xl:text-sm 2xl:text-base leading-[120%]"
                   style={{ fontFamily: 'var(--font-nunito-sans)' }}
                 >
-                  Наша адреса
+                  {t('ourAddress')}
                 </span>
                 <div className="flex items-center gap-[10px]">
                   <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px]">
@@ -107,7 +107,7 @@ export default function Footer() {
                     className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%]"
                     style={{ fontFamily: 'var(--font-unbounded)' }}
                   >
-                    м. Львів вул. Стрийська 200а
+                    {t('lvivAddress')}
                   </span>
                 </div>
               </div>

@@ -118,7 +118,7 @@ function TransferSlider({ title, transfers, description, darkButton = false }: T
 }
 
 export default function TransfersSection() {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section className="w-full bg-[#1E1D1E] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
@@ -126,101 +126,62 @@ export default function TransfersSection() {
 
         {/* Group 1: Ukraine Transfers */}
         <TransferSlider
-          title={language === 'uk' ? 'Трансфер по україні' : 'Transfer across Ukraine'}
+          title={t('transferUkraineTitle')}
           transfers={ukraineTransfers}
           description={
-            language === 'uk' ? (
-              <>
-                <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
-                  Індивідуальні міжміські трансфери по Україні
-                </p>
-                <p className="mb-[16px]">
-                  Ми надаємо <strong>індивідуальні міжміські трансфери по Україні</strong> на преміальних автомобілях <strong>BMW 7 Series</strong> та <strong>Mercedes-Benz S-Class (W222)</strong> з професійним водієм. Поїздки виконуються <strong>без попутників</strong>, з повною приватністю та максимальним комфортом.
-                </p>
-                <p className="mb-[16px]">
-                  Найчастіше трансфери здійснюються <strong>зі Львова або у Львів</strong>, однак ми також виконуємо <strong>попутні трансфери між іншими містами України</strong>. Маршрут, час виїзду та всі деталі поїздки узгоджуються індивідуально, з урахуванням поточної дорожньої ситуації та вимог безпеки.
-                </p>
-                <p>
-                  Сервіс підходить для бізнес-поїздок, сімейних подорожей, міжміських переїздів, поїздок до курортів або у напрямку кордону для подальших міжнародних маршрутів.
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
-                  Individual intercity transfers across Ukraine
-                </p>
-                <p className="mb-[16px]">
-                  We provide <strong>individual intercity transfers across Ukraine</strong> in premium <strong>BMW 7 Series</strong> and <strong>Mercedes-Benz S-Class (W222)</strong> vehicles with a professional driver. All rides are <strong>without fellow passengers</strong>, ensuring complete privacy and maximum comfort.
-                </p>
-                <p className="mb-[16px]">
-                  Most transfers are <strong>from or to Lviv</strong>, but we also operate <strong>connecting transfers between other Ukrainian cities</strong>. Route, departure time, and all trip details are arranged individually, taking into account current road conditions and safety requirements.
-                </p>
-                <p>
-                  The service is suitable for business trips, family vacations, intercity relocations, resort trips, or trips toward the border for further international routes.
-                </p>
-              </>
-            )
+            <>
+              <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
+                {t('transferUkraineSubtitle')}
+              </p>
+              <p className="mb-[16px]">
+                {t('transferUkraineDesc1')}
+              </p>
+              <p className="mb-[16px]">
+                {t('transferUkraineDesc2')}
+              </p>
+              <p>
+                {t('transferUkraineDesc3')}
+              </p>
+            </>
           }
         />
 
         {/* Group 2: Europe Transfers */}
         <TransferSlider
-          title={language === 'uk' ? 'Трансфер по Європі' : 'Transfer across Europe'}
+          title={t('transferEuropeTitle')}
           transfers={europeTransfers}
           description={
-            language === 'uk' ? (
-              <>
-                <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
-                  Індивідуальні трансфери між Україною та Європою
-                </p>
-                <p className="mb-[16px]">
-                  Ми організовуємо <strong>індивідуальні преміальні трансфери між містами України та Європи</strong>, а також між європейськими містами. Поїздки здійснюються на <strong>BMW 7 Series</strong> та <strong>Mercedes-Benz S-Class (W222)</strong> з професійним водієм, <strong>без попутників</strong>, з максимальним комфортом та приватністю.
-                </p>
-                <p>
-                  Сервіс підходить для бізнес-поїздок, сімейних подорожей, зустрічей на подіях або приватних трансферів до будь-яких європейських міст. Маршрут, час виїзду та всі деталі поїздки узгоджуються індивідуально, з урахуванням безпеки та актуальної дорожньо-прикордонної ситуації.
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
-                  Individual transfers between Ukraine and Europe
-                </p>
-                <p className="mb-[16px]">
-                  We organize <strong>individual premium transfers between cities in Ukraine and Europe</strong>, as well as between European cities. Rides are in <strong>BMW 7 Series</strong> and <strong>Mercedes-Benz S-Class (W222)</strong> with a professional driver, <strong>no fellow passengers</strong>, with maximum comfort and privacy.
-                </p>
-                <p>
-                  The service is suitable for business trips, family vacations, event meetings, or private transfers to any European city. Route, departure time, and all trip details are arranged individually, considering safety and current border-road conditions.
-                </p>
-              </>
-            )
+            <>
+              <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
+                {t('transferEuropeSubtitle')}
+              </p>
+              <p className="mb-[16px]">
+                {t('transferEuropeDesc1')}
+              </p>
+              <p>
+                {t('transferEuropeDesc2')}
+              </p>
+            </>
           }
         />
 
         {/* Group 3: Lviv Transfers */}
         <TransferSlider
-          title={language === 'uk' ? 'Трансфер по львову' : 'Transfer around Lviv'}
+          title={t('transferLvivTitle')}
           transfers={lvivTransfers}
           darkButton={true}
           description={
-            language === 'uk' ? (
-              <>
-                <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
-                  Індивідуальні трансфери по львову
-                </p>
-                <p>
-                  Надаємо комфортний трансфер <strong>по місту Львів</strong> за попередньою домовленістю до популярних локацій, зокрема Emily Resort, Edem Resort, залізничного вокзалу та автовокзалу. Водночас <strong>маршрут не обмежується фіксованими напрямками</strong> — ми організуємо індивідуальний трансфер відповідно до вашого запиту, з урахуванням часу, місця та побажань до поїздки.
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
-                  Individual transfers around Lviv
-                </p>
-                <p>
-                  We provide comfortable transfers <strong>around the city of Lviv</strong> by prior arrangement to popular locations, including Emily Resort, Edem Resort, the train station, and the bus station. At the same time, <strong>the route is not limited to fixed destinations</strong> — we arrange individual transfers according to your request, taking into account time, location, and trip preferences.
-                </p>
-              </>
-            )
+            <>
+              <p className="font-bold uppercase text-[16px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
+                {t('transferLvivSubtitle')}
+              </p>
+              <p className="mb-[16px]">
+                {t('transferLvivDesc1')}
+              </p>
+              <p>
+                {t('transferLvivDesc2')}
+              </p>
+            </>
           }
         />
 

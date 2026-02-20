@@ -25,7 +25,7 @@ export default function HeroSection() {
           className="text-[12px] md:text-[18px] lg:text-[20px] xl:text-[24px] text-white text-center leading-[120%]"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
-          БІЗНЕС ТА ПРЕМІУМ КЛАС
+          {t('heroSubtitle')}
         </h2>
 
         {/* Main Title */}
@@ -33,9 +33,9 @@ export default function HeroSection() {
           className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[55px] xl:text-[70px] text-white text-center leading-[105%] lg:leading-[100%] font-black lg:text-nowrap"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
-          <span className="hidden lg:inline">ІНДИВІДУАЛЬНИЙ ТРАНСФЕР<br />ПО УКРАЇНІ ТА ЄВРОПІ</span>
-          <span className="hidden md:inline lg:hidden">ІНДИВІДУАЛЬНИЙ ТРАНСФЕР ПО УКРАЇНІ ТА ЄВРОПІ</span>
-          <span className="md:hidden">ІНДИВІДУА-<br className="md:hidden" />ЛЬНИЙ ТРАНСФЕР ПО УКРАЇНІ ТА ЄВРОПІ</span>
+          <span className="hidden lg:inline">{t('heroMainTitleDesktop')}<br />{t('heroMainTitleDesktopLine2')}</span>
+          <span className="hidden md:inline lg:hidden">{t('heroMainTitle')}</span>
+          <span className="md:hidden">{t('heroMainTitleMobile')}<br className="md:hidden" />{t('heroMainTitleMobileLine2')}</span>
         </h1>
       </div>
 
@@ -57,7 +57,7 @@ export default function HeroSection() {
           className="relative z-10 text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] text-[#070707] font-bold leading-[100%] tracking-wide uppercase"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
-          РОЗРАХУВАТИ ВАРТІСТЬ
+          {t('heroCTA')}
         </span>
         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
       </a>

@@ -3,8 +3,10 @@
 import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import CarCard from './CarCard';
 import { carsData } from '@/data/cars';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AutoparkSection() {
+  const { t } = useLanguage();
   // Duplicate cards if fewer than 3 so the slider works properly
   const displayCars = useMemo(() => {
     if (carsData.length === 0) return [];
@@ -75,7 +77,7 @@ export default function AutoparkSection() {
           className="lg:hidden text-[30px] md:text-[60px] text-[#070707] font-black leading-[100%]"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
-          АВТОПАРК
+          {t('autoparkSectionTitle')}
         </h2>
 
         {/* Header Row - Desktop only (Title + Button) */}
@@ -84,7 +86,7 @@ export default function AutoparkSection() {
             className="text-[60px] text-[#070707] font-black leading-[100%]"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            АВТОПАРК
+            {t('autoparkSectionTitle')}
           </h2>
           <a
             href="https://t.me/rentalviv_bot"
@@ -96,7 +98,7 @@ export default function AutoparkSection() {
               className="text-[24px] text-[#070707] group-hover:text-white font-bold leading-[100%] uppercase transition-colors"
               style={{ fontFamily: 'var(--font-unbounded)' }}
             >
-              ДОСТУПНІ АВТО
+              {t('availableCarsButton')}
             </span>
           </a>
         </div>
@@ -160,7 +162,7 @@ export default function AutoparkSection() {
             className="text-[14px] md:text-[24px] text-[#070707] group-hover:text-white font-bold leading-[100%] uppercase transition-colors"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            ДОСТУПНІ АВТО
+            {t('availableCarsButton')}
           </span>
         </a>
 

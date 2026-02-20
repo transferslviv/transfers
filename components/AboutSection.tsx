@@ -1,6 +1,10 @@
 'use client';
 
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function AboutSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="w-full bg-[#F3F3F3] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
       <div className="flex flex-col lg:flex-row items-center gap-[40px] md:gap-[80px] lg:gap-[50px] w-full max-w-[1425px] mx-auto">
@@ -10,7 +14,7 @@ export default function AboutSection() {
           className="order-1 lg:hidden text-[30px] md:text-[60px] text-[#070707] font-black leading-[100%]"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
-          ПРО НАС
+          {t('aboutTitle')}
         </h2>
 
         {/* Map Image */}
@@ -30,7 +34,7 @@ export default function AboutSection() {
             className="hidden lg:block text-[60px] text-[#070707] font-black leading-[100%]"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            ПРО НАС
+            {t('aboutTitle')}
           </h2>
 
           {/* Description */}
@@ -38,7 +42,7 @@ export default function AboutSection() {
             className="text-[12px] md:text-[18px] text-[#070707] leading-[120%]"
             style={{ fontFamily: 'var(--font-nunito-sans)' }}
           >
-            <strong>TRANSFERLVIV</strong> - це українська компанія, яка надає трансферні послуги преміум-класу по Україні та за її межами. Розвиваємо культуру професійних якісних, скоординованих трансферних послуг, які задовольняють запити клієнтів, створюють приємні враження і дозволяють їм відчувати безпеку та турботу протягом всієї поїздки.
+            <strong>TRANSFERLVIV</strong> - {t('aboutDescription').replace('TRANSFERLVIV - ', '')}
           </p>
         </div>
 
