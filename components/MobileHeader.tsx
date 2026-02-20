@@ -272,7 +272,7 @@ export default function MobileHeader() {
           {/* Phone Number - Tablet only */}
           <a 
             href="tel:+380777877087"
-            className="hidden md:block text-[#FFAE00] text-[16px] font-black leading-[120%] hover:text-white transition-colors"
+            className="hidden md:block text-white text-[16px] font-black leading-[120%] hover:text-[#FFAE00] transition-colors"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
             +380 777 877 087
@@ -370,7 +370,7 @@ export default function MobileHeader() {
             {/* Phone Number */}
             <a
               href="tel:+380777877087"
-              className="text-[#FFAE00] text-[10px] font-black leading-[120%] mb-[30px]"
+              className="text-white text-[10px] font-black leading-[120%] mb-[30px]"
               style={{ fontFamily: 'var(--font-unbounded)' }}
             >
               +380 777 877 087

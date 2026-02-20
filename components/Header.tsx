@@ -188,7 +188,7 @@ export default function Header() {
           {/* Phone Number */}
           <a 
             href="tel:+380777877087"
-            className="text-[#FFAE00] text-[16px] font-black leading-[120%] hover:text-white transition-colors"
+            className="text-white text-[16px] font-black leading-[120%] hover:text-[#FFAE00] transition-colors"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
             +380 777 877 087
