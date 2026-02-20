@@ -1,0 +1,332 @@
+'use client';
+
+import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+export default function Footer() {
+  const { t } = useLanguage();
+  
+  return (
+    <footer id="contacts" className="bg-[#070707] px-[15px] md:px-[50px] py-[60px] md:py-[100px]">
+      <div className="flex flex-col gap-[40px] md:gap-[80px] max-w-[1425px] mx-auto">
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:flex justify-between items-center">
+          {/* Column 1 - Logo and Description */}
+          <div className="flex flex-col gap-5">
+            <Link href="/" className="group">
+              <img src="/images/logo.svg" alt="TransferLviv" className="w-[200px] xl:w-[240px] 2xl:w-[273px] h-auto group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[5000%] group-hover:hue-rotate-[-10deg] transition-all" />
+            </Link>
+            <div className="flex flex-col gap-[10px]">
+              <p 
+                className="text-white text-xs xl:text-sm 2xl:text-base leading-[120%] uppercase"
+                style={{ fontFamily: 'var(--font-unbounded)' }}
+              >
+                <span className="font-black">TransferLviv</span>
+                <span className="font-normal"> —</span><br />
+                <span className="font-normal">{t('comfortableRentalLine1')}</span><br />
+                <span className="font-normal">{t('comfortableRentalLine2')}</span>
+              </p>
+              <p 
+                className="text-white text-[10px] xl:text-xs 2xl:text-sm leading-[120%]"
+                style={{ fontFamily: 'var(--font-nunito-sans)' }}
+              >
+                {t('footerRights')}
+              </p>
+            </div>
+          </div>
+
+          {/* Contact info in horizontal layout */}
+          <div className="flex gap-[30px] xl:gap-[50px] 2xl:gap-20 items-center">
+            {/* Column 2 - Phone, Email and Address */}
+            <div className="flex flex-col gap-[30px] xl:gap-[40px] 2xl:gap-[50px]">
+              {/* Phone and Email row */}
+              <div className="flex gap-[30px] xl:gap-[50px]">
+                {/* Телефон */}
+                <div className="flex flex-col justify-center gap-[10px]">
+                  <span 
+                    className="text-white text-xs xl:text-sm 2xl:text-base leading-[120%]"
+                    style={{ fontFamily: 'var(--font-nunito-sans)' }}
+                  >
+                    {t('phoneNumber')}
+                  </span>
+                  <Link 
+                  href="tel:+380777877087"
+                  className="flex items-center gap-[10px] group transition-colors"
+                  >
+                    <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
+                      <img src="/images/socials/phone.svg" alt="Phone" className="w-[18px] h-[18px]" />
+                    </div>
+                    <span 
+                      className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%] group-hover:text-[#FFAE00] transition-colors text-nowrap"
+                      style={{ fontFamily: 'var(--font-unbounded)' }}
+                    >
+                      +380 777 877 087
+                    </span>
+                  </Link>
+                </div>
+
+                {/* Email */}
+                <div className="flex flex-col justify-center gap-[10px]">
+                  <span 
+                    className="text-white text-xs xl:text-sm 2xl:text-base leading-[120%]"
+                    style={{ fontFamily: 'var(--font-nunito-sans)' }}
+                  >
+                    {t('email')}
+                  </span>
+                  <Link 
+                  href="mailto:rentalviv@gmail.com"
+                  className="flex items-center gap-[10px] group transition-colors"
+                  >
+                    <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
+                      <img src="/images/socials/mail.svg" alt="Email" className="w-[18px] h-[18px]" />
+                    </div>
+                    <span 
+                      className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%] group-hover:text-[#FFAE00] transition-colors"
+                      style={{ fontFamily: 'var(--font-unbounded)' }}
+                    >
+                      rentalviv@gmail.com
+                    </span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="flex flex-col justify-center gap-[8px] xl:gap-[10px]">
+                <span 
+                  className="text-white text-xs xl:text-sm 2xl:text-base leading-[120%]"
+                  style={{ fontFamily: 'var(--font-nunito-sans)' }}
+                >
+                  Наша адреса
+                </span>
+                <div className="flex items-center gap-[10px]">
+                  <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px]">
+                    <img src="/images/socials/geo.svg" alt="Location" className="w-[18px] h-[18px]" />
+                  </div>
+                  <span 
+                    className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%]"
+                    style={{ fontFamily: 'var(--font-unbounded)' }}
+                  >
+                    м. Львів вул. Стрийська 200а
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 3 - Social networks and Messengers */}
+            <div className="flex flex-col justify-center gap-[30px] xl:gap-[40px] 2xl:gap-[50px]">
+              {/* Social networks */}
+              <div className="flex flex-col justify-center gap-[10px]">
+                <span 
+                  className="text-white text-xs xl:text-sm 2xl:text-base leading-[120%]"
+                  style={{ fontFamily: 'var(--font-nunito-sans)' }}
+                >
+                  {t('followUs')}
+                </span>
+                <div className="flex gap-[10px]">
+                  <Link 
+                    href="https://instagram.com/rentalviv" 
+                    target="_blank"
+                    className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
+                  >
+                    <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[18px] h-[18px]" />
+                  </Link>
+                  <Link 
+                    href="https://tiktok.com/@rentalviv" 
+                    target="_blank"
+                    className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
+                  >
+                    <img src="/images/socials/tik-tok.svg" alt="TikTok" className="w-[18px] h-[18px]" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Messengers */}
+              <div className="flex flex-col justify-center gap-[8px] xl:gap-[10px]">
+                <span 
+                  className="text-white text-xs xl:text-sm 2xl:text-base leading-[120%]"
+                  style={{ fontFamily: 'var(--font-nunito-sans)' }}
+                >
+                  {t('writeToManagers')}
+                </span>
+                <div className="flex gap-[10px] items-center">
+                  <Link 
+                    href="https://t.me/rentalviv1" 
+                    target="_blank"
+                    className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
+                  >
+                    <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[18px] h-[18px]" />
+                  </Link>
+                  <Link 
+                    href="https://wa.me/380777877087" 
+                    target="_blank"
+                    className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
+                  >
+                    <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[18px] h-[18px]" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Logo and Description - at top on mobile/tablet */}
+        <div className="lg:hidden flex flex-col md:flex-row md:items-center gap-[15px] md:gap-[50px]">
+          {/* Логотип */}
+          <img src="/images/logo-footer.svg" alt="TransferLviv" className="w-[205px] md:w-[309px] h-auto" />
+          
+          {/* Текст */}
+          <p 
+            className="text-white text-[10px] md:text-base leading-[120%] uppercase"
+            style={{ fontFamily: 'var(--font-unbounded)' }}
+          >
+            <span className="font-black">TransferLviv</span>
+            <span className="font-normal"> —</span><br />
+            <span className="font-normal">{t('comfortableRentalLine1')}</span><br />
+            <span className="font-normal">{t('comfortableRentalLine2')}</span>
+          </p>
+        </div>
+
+        {/* Контакти - Mobile/Tablet */}
+        <div className="lg:hidden flex flex-col gap-[25px] md:gap-[50px] w-full">
+          {/* Phone and Email - Row on tablet */}
+          <div className="flex flex-col md:flex-row gap-[25px] md:gap-[50px]">
+            {/* Телефон */}
+            <div className="flex flex-col gap-[10px]">
+              <span 
+                className="text-white text-[12px] md:text-base leading-[120%]"
+                style={{ fontFamily: 'var(--font-nunito-sans)' }}
+              >
+                {t('phoneNumber')}
+              </span>
+              <Link 
+                href="tel:+380777877087"
+                className="flex items-center gap-[10px]"
+              >
+                <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
+                  <img src="/images/socials/phone.svg" alt="Phone" className="w-[20px] h-[20px]" />
+                </div>
+                <span 
+                  className="text-white text-[12px] md:text-base font-black leading-[120%]"
+                  style={{ fontFamily: 'var(--font-unbounded)' }}
+                >
+                  +380 777 877 087
+                </span>
+              </Link>
+            </div>
+
+            {/* Email */}
+            <div className="flex flex-col gap-[10px]">
+              <span 
+                className="text-white text-[12px] md:text-base leading-[120%]"
+                style={{ fontFamily: 'var(--font-nunito-sans)' }}
+              >
+                {t('email')}
+              </span>
+              <Link 
+                href="mailto:rentalviv@gmail.com"
+                className="flex items-center gap-[10px]"
+              >
+                <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
+                  <img src="/images/socials/mail.svg" alt="Email" className="w-[20px] h-[20px]" />
+                </div>
+                <span 
+                  className="text-white text-[12px] md:text-base font-black leading-[120%]"
+                  style={{ fontFamily: 'var(--font-unbounded)' }}
+                >
+                  rentalviv@gmail.com
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Адреса */}
+          <div className="flex flex-col gap-[10px]">
+            <span 
+              className="text-white text-[12px] md:text-base leading-[120%]"
+              style={{ fontFamily: 'var(--font-nunito-sans)' }}
+            >
+              {t('ourAddress')}
+            </span>
+            <div className="flex items-center gap-[10px]">
+              <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px]">
+                <img src="/images/socials/geo.svg" alt="Location" className="w-[20px] h-[20px]" />
+              </div>
+              <span 
+                className="text-white text-[12px] md:text-base font-black leading-[120%]"
+                style={{ fontFamily: 'var(--font-unbounded)' }}
+              >
+                {t('lvivAddress')}
+              </span>
+            </div>
+          </div>
+
+          {/* Social and Messengers - Row on tablet */}
+          <div className="flex flex-col md:flex-row gap-[25px] md:gap-[50px]">
+            {/* Соцмережі */}
+            <div className="flex flex-col gap-[10px]">
+              <span 
+                className="text-white text-[12px] md:text-base leading-[120%]"
+                style={{ fontFamily: 'var(--font-nunito-sans)' }}
+              >
+                {t('followUs')}
+              </span>
+              <div className="flex gap-[10px]">
+                <Link 
+                  href="https://instagram.com/rentalviv" 
+                  target="_blank"
+                  className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
+                >
+                  <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[20px] h-[20px]" />
+                </Link>
+                <Link 
+                  href="https://tiktok.com/@rentalviv" 
+                  target="_blank"
+                  className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
+                >
+                  <img src="/images/socials/tik-tok.svg" alt="TikTok" className="w-[20px] h-[20px]" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Месенджери */}
+            <div className="flex flex-col gap-[10px]">
+              <span 
+                className="text-white text-[12px] md:text-base leading-[120%]"
+                style={{ fontFamily: 'var(--font-nunito-sans)' }}
+              >
+                {t('writeToManagers')}
+              </span>
+              <div className="flex gap-[10px]">
+                <Link 
+                  href="https://t.me/rentalviv1" 
+                  target="_blank"
+                  className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
+                >
+                  <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[20px] h-[20px]" />
+                </Link>
+                <Link 
+                  href="https://wa.me/380777877087" 
+                  target="_blank"
+                  className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
+                >
+                  <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[20px] h-[20px]" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright - only on mobile/tablet */}
+        <div className="lg:hidden w-full text-center">
+          <p 
+            className="text-white text-[12px] md:text-sm leading-[120%]"
+            style={{ fontFamily: 'var(--font-nunito-sans)' }}
+          >
+            {t('footerRights')}
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
