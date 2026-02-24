@@ -10,7 +10,7 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
   subsets: ["latin", "cyrillic"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const unbounded = Unbounded({
@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className={`${nunitoSans.variable} ${unbounded.variable} antialiased`}>
         <LanguageProvider>
           <CurrencyProvider>
-            <div className="hidden lg:block">
+            <div className="hidden xl:block">
               <Header />
             </div>
             <MobileHeader />

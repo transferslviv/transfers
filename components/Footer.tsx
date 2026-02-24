@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="flex flex-col gap-[40px] md:gap-[80px] max-w-[1425px] mx-auto">
 
         {/* Desktop Layout */}
-        <div className="hidden lg:flex justify-between items-center">
+        <div className="hidden xl:flex justify-between items-center">
           {/* Column 1 - Logo and Description */}
           <div className="flex flex-col gap-5">
             <Link href="/" className="group">
@@ -171,9 +171,9 @@ export default function Footer() {
         </div>
 
         {/* Logo and Description - at top on mobile/tablet */}
-        <div className="lg:hidden flex flex-col md:flex-row md:items-center gap-[15px] md:gap-[50px]">
+        <div className="xl:hidden flex flex-col md:flex-row md:items-center gap-[15px] md:gap-[50px]">
           {/* Логотип */}
-          <img src="/images/logo-footer.svg" alt="TransferLviv" className="w-[205px] md:w-[309px] h-auto" />
+          <img src="/images/logo.svg" alt="TransferLviv" className="w-[205px] md:w-[309px] h-auto" />
           
           {/* Текст */}
           <p 
@@ -188,7 +188,7 @@ export default function Footer() {
         </div>
 
         {/* Контакти - Mobile/Tablet */}
-        <div className="lg:hidden flex flex-col gap-[25px] md:gap-[50px] w-full">
+        <div className="xl:hidden flex flex-col gap-[25px] md:gap-[50px] w-full">
           {/* Phone and Email - Row on tablet */}
           <div className="flex flex-col md:flex-row gap-[25px] md:gap-[50px]">
             {/* Телефон */}
@@ -318,7 +318,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright - only on mobile/tablet */}
-        <div className="lg:hidden w-full text-center">
+        <div className="xl:hidden w-full text-center">
           <p 
             className="text-white text-[12px] md:text-sm leading-[120%]"
             style={{ fontFamily: 'var(--font-nunito-sans)' }}

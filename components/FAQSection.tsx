@@ -64,9 +64,9 @@ export default function FAQSection() {
     if (activeIndex !== index) return null;
     const item = faqData[index];
     return (
-      <div className="px-[10px] md:px-[30px] lg:px-0">
+      <div className="px-[10px] md:px-[30px] xl:px-0">
         <div 
-          className="bg-[#070707] rounded-[8px] md:rounded-[10px] px-[20px] md:px-[50px] lg:px-[50px] py-[14px] md:py-[30px] transition-all duration-300"
+          className="bg-[#070707] rounded-[8px] md:rounded-[10px] px-[20px] md:px-[50px] xl:px-[50px] py-[14px] md:py-[30px] transition-all duration-300"
           style={{
             boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
           }}
@@ -89,7 +89,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full bg-[#F3F3F3] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
+    <section id="faq" className="w-full bg-[#F3F3F3] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
       <div className="flex flex-col items-center gap-[40px] md:gap-[80px] w-full max-w-[1425px] mx-auto">
         
         {/* Title */}
@@ -101,7 +101,7 @@ export default function FAQSection() {
         </h2>
 
         {/* Desktop: two-column layout */}
-        <div className="hidden lg:flex flex-row gap-[50px] w-full">
+        <div className="hidden xl:flex flex-row gap-[50px] w-full">
           {/* Column 1 - Questions */}
           <div className="flex flex-col gap-[20px] w-1/2">
             {faqData.map((item, index) => {
@@ -110,28 +110,32 @@ export default function FAQSection() {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(isActive ? null : index)}
-                  className={`
-                    w-full flex items-center justify-between
-                    px-[50px] py-[20px]
-                    rounded-[10px] transition-all duration-300 cursor-pointer
-                    ${isActive
-                      ? 'bg-gradient-to-r from-[#FFAE00] to-[#F39E00] border border-white/30'
-                      : 'bg-transparent border border-[#070707] hover:border-[#F39E00]'
-                    }
-                  `}
+                  className="relative w-full flex items-center justify-between px-[50px] py-[20px] rounded-[10px] transition-all duration-300 cursor-pointer overflow-hidden group"
                   style={isActive ? {
+                    background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
                     boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
                   } : undefined}
                 >
+                  <span className="absolute inset-0 rounded-[10px] pointer-events-none z-20 transition-all duration-300"
+                    style={{
+                      padding: isActive ? '2.5px' : '2.5px',
+                      background: isActive
+                        ? 'linear-gradient(to bottom, rgba(255,255,255,0.29), rgba(255,255,255,1))'
+                        : '#070707',
+                      WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                      WebkitMaskComposite: 'xor',
+                      maskComposite: 'exclude',
+                    }}
+                  />
                   <span
-                    className="text-[20px] font-black leading-[120%] text-left text-[#070707]"
+                    className="text-[20px] font-black leading-[120%] text-left text-[#070707] relative z-10"
                     style={{ fontFamily: 'var(--font-nunito-sans)' }}
                   >
                     {item.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-[15px] transition-transform duration-300 ${isActive ? '-rotate-90' : ''}`}>
-                    <svg width="18" height="10" viewBox="0 0 18 10" fill="none">
-                      <path d="M9 10L0 0L18 0L9 10Z" fill="#070707" />
+                  <div className={`flex-shrink-0 ml-[15px] transition-transform duration-300 relative z-10 ${isActive ? '-rotate-90' : ''}`}>
+                    <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.6091 0H8.59945H1.38693C0.152699 0 -0.464414 1.51783 0.409831 2.40759L7.06952 9.18548C8.13661 10.2715 9.87225 10.2715 10.9393 9.18548L13.4721 6.60778L17.599 2.40759C18.4604 1.51783 17.8433 0 16.6091 0Z" fill="#070707" />
                     </svg>
                   </div>
                 </button>
@@ -166,35 +170,39 @@ export default function FAQSection() {
         </div>
 
         {/* Mobile/Tablet: single-column, answer below active question */}
-        <div className="flex lg:hidden flex-col gap-[15px] md:gap-[20px] w-full">
+        <div className="flex xl:hidden flex-col gap-[15px] md:gap-[20px] w-full">
           {faqData.map((item, index) => {
             const isActive = activeIndex === index;
             return (
               <div key={index} className="flex flex-col gap-[15px] md:gap-[20px]">
                 <button
                   onClick={() => setActiveIndex(isActive ? null : index)}
-                  className={`
-                    w-full flex items-center justify-between
-                    px-[20px] md:px-[50px] py-[14px] md:py-[20px]
-                    rounded-[8px] md:rounded-[10px] transition-all duration-300 cursor-pointer
-                    ${isActive
-                      ? 'bg-gradient-to-r from-[#FFAE00] to-[#F39E00] border border-white/30'
-                      : 'bg-transparent border border-[#070707] hover:border-[#F39E00]'
-                    }
-                  `}
+                  className="relative w-full flex items-center justify-between px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] transition-all duration-300 cursor-pointer overflow-hidden group"
                   style={isActive ? {
+                    background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
                     boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
                   } : undefined}
                 >
+                  <span className="absolute inset-0 rounded-[8px] md:rounded-[10px] pointer-events-none z-20 transition-all duration-300"
+                    style={{
+                      padding: isActive ? '1.5px' : '2.5px',
+                      background: isActive
+                        ? 'linear-gradient(to bottom, rgba(255,255,255,0.29), rgba(255,255,255,1))'
+                        : '#070707',
+                      WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                      WebkitMaskComposite: 'xor',
+                      maskComposite: 'exclude',
+                    }}
+                  />
                   <span
-                    className="text-[16px] md:text-[20px] font-black leading-[120%] text-left text-[#070707]"
+                    className="text-[16px] md:text-[20px] font-black leading-[120%] text-left text-[#070707] relative z-10"
                     style={{ fontFamily: 'var(--font-nunito-sans)' }}
                   >
                     {item.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-[7px] md:ml-[50px] transition-transform duration-300 ${isActive ? '-rotate-90' : ''}`}>
-                    <svg className="w-[11px] h-[6px] md:w-[18px] md:h-[10px]" viewBox="0 0 18 10" fill="none">
-                      <path d="M9 10L0 0L18 0L9 10Z" fill="#070707" />
+                  <div className={`flex-shrink-0 ml-[7px] md:ml-[50px] transition-transform duration-300 relative z-10 ${isActive ? '-rotate-90' : ''}`}>
+                    <svg className="w-[11px] h-[6px] md:w-[18px] md:h-[10px]" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.6091 0H8.59945H1.38693C0.152699 0 -0.464414 1.51783 0.409831 2.40759L7.06952 9.18548C8.13661 10.2715 9.87225 10.2715 10.9393 9.18548L13.4721 6.60778L17.599 2.40759C18.4604 1.51783 17.8433 0 16.6091 0Z" fill="#070707" />
                     </svg>
                   </div>
                 </button>

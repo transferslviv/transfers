@@ -20,9 +20,17 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#070707] h-[70px] shadow-[0_0_70px_rgba(0,0,0,1)]">
-      <div className="w-full mx-auto px-[15px] md:px-[50px] lg:px-[50px] xl:px-[60px] 2xl:px-[150px] h-full flex items-center justify-between">
+      <div className="w-full mx-auto px-[15px] md:px-[50px] xl:px-[60px] 2xl:px-[150px] h-full flex items-center justify-between">
         {/* Left Part - Navigation */}
         <nav className="flex items-center gap-[20px] xl:gap-[35px] 2xl:gap-[50px]">
+          <Link 
+            href="/#about" 
+            className="text-white text-sm xl:text-base 2xl:text-lg font-normal leading-none hover:text-[#FFAE00] transition-all relative group"
+            style={{ fontFamily: 'Nunito Sans, sans-serif' }}
+          >
+            {t('aboutUs')}
+            <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-[#FFAE00] group-hover:w-full transition-all duration-300"></span>
+          </Link>
           <Link 
             href="/#autopark" 
             className="text-white text-sm xl:text-base 2xl:text-lg font-normal leading-none hover:text-[#FFAE00] transition-all relative group"
@@ -32,19 +40,19 @@ export default function Header() {
             <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-[#FFAE00] group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link 
-            href="/#rental-conditions" 
-            className="text-white text-sm xl:text-base 2xl:text-lg font-normal leading-none hover:text-[#FFAE00] transition-all relative group"
-            style={{ fontFamily: 'Nunito Sans, sans-serif' }}
-          >
-            {t('rentalConditions')}
-            <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-[#FFAE00] group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link 
             href="/#services" 
             className="text-white text-sm xl:text-base 2xl:text-lg font-normal leading-none hover:text-[#FFAE00] transition-all relative group"
             style={{ fontFamily: 'Nunito Sans, sans-serif' }}
           >
             {t('services')}
+            <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-[#FFAE00] group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link 
+            href="/#faq" 
+            className="text-white text-sm xl:text-base 2xl:text-lg font-normal leading-none hover:text-[#FFAE00] transition-all relative group"
+            style={{ fontFamily: 'Nunito Sans, sans-serif' }}
+          >
+            {t('faq')}
             <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-[#FFAE00] group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link 
@@ -77,41 +85,7 @@ export default function Header() {
 
         {/* Right Part */}
         <div className="flex items-center gap-[15px] xl:gap-[20px] 2xl:gap-[30px]">
-          {/* Currency Selector */}
-          <div className="relative">
-            <button 
-              onClick={() => {
-                setIsCurrencyOpen(!isCurrencyOpen);
-                setIsLanguageOpen(false);
-              }}
-              className="flex items-center gap-[5px] cursor-pointer hover:text-[#FFAE00] transition-colors"
-              aria-label={`Вибрати валюту, поточна: ${currencySymbol}`}
-              aria-expanded={isCurrencyOpen}
-            >
-              <span className="text-white text-sm xl:text-base 2xl:text-lg">{currencySymbol}</span>
-              <svg width="9" height="26" viewBox="0 0 9 26" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform duration-300 ${isCurrencyOpen ? 'rotate-180' : ''}`}>
-                <path d="M4.5 18L0 13L9 13L4.5 18Z" fill={isCurrencyOpen ? '#FFAE00' : 'white'}/>
-              </svg>
-            </button>
-            {isCurrencyOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-[#1a1a1a] rounded-[15px] lg:rounded-[20px] p-2 lg:p-3 xl:p-2 shadow-[0_0_50px_rgba(0,0,0,0.8)] min-w-[60px] lg:min-w-[60px] xl:min-w-[60px] z-[60]">
-                {currencies.map((curr) => (
-                  <button
-                    key={curr}
-                    onClick={() => {
-                      setCurrency(curr);
-                      setIsCurrencyOpen(false);
-                    }}
-                    className={`w-full px-2 lg:px-1 xl:px-1 py-1.5 lg:py-1 xl:py-1 text-lg lg:text-lg xl:text-lg text-center rounded-[8px] lg:rounded-[10px] transition-all ${
-                      currentCurrency === curr ? 'text-white bg-[#2a2a2a]' : 'text-gray-500 hover:text-white hover:bg-[#2a2a2a]'
-                    }`}
-                  >
-                    {currencySymbols[curr]}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+         
 
           {/* Language Selector */}
           <div className="relative">
@@ -130,7 +104,7 @@ export default function Header() {
               </svg>
             </button>
             {isLanguageOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-[#1a1a1a] rounded-[15px] lg:rounded-[20px] p-2 lg:p-3 xl:p-2 shadow-[0_0_50px_rgba(0,0,0,0.8)] min-w-[80px] lg:min-w-[100px] xl:min-w-[100px] z-[60]">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-[#1a1a1a] rounded-[15px] xl:rounded-[20px] p-2 xl:p-3 shadow-[0_0_50px_rgba(0,0,0,0.8)] min-w-[80px] xl:min-w-[100px] z-[60]">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
@@ -138,7 +112,7 @@ export default function Header() {
                       setLanguage(lang.code);
                       setIsLanguageOpen(false);
                     }}
-                    className={`w-full px-2 lg:px-1 xl:px-1 py-1.5 lg:py-1 xl:py-1 text-lg lg:text-lg xl:text-lg text-center rounded-[8px] lg:rounded-[10px] transition-all ${
+                    className={`w-full px-2 xl:px-1 py-1.5 xl:py-1 text-lg xl:text-lg text-center rounded-[8px] xl:rounded-[10px] transition-all ${
                       currentLanguage === lang.code ? 'text-white bg-[#2a2a2a]' : 'text-gray-500 hover:text-white hover:bg-[#2a2a2a]'
                     }`}
                   >
@@ -191,7 +165,7 @@ export default function Header() {
             className="text-white text-[16px] font-black leading-[120%] hover:text-[#FFAE00] transition-colors"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            +380 777 877 087
+            0 777 877 087
           </a>
         </div>
       </div>

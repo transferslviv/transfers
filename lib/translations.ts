@@ -2,9 +2,10 @@ export const translations = {
   uk: {
     // Header
     menu: 'МЕНЮ',
+    aboutUs: 'Про Нас',
     autopark: 'Автопарк',
-    rentalConditions: 'Умови оренди',
     services: 'Послуги',
+    faq: 'FAQ',
     contacts: 'Контакти',
     availableCars: 'ДОСТУПНІ АВТО В ОРЕНДУ',
     
@@ -53,7 +54,7 @@ export const translations = {
     comfortableRental: 'пересувайтеся впевнено з комфортом',
     comfortableRentalLine1: 'пересувайтеся',
     comfortableRentalLine2: 'впевнено з комфортом',
-    footerRights: '© 2025 RentaLviv. Всі права захищені',
+    footerRights: '© 2025 TransferLviv. Всі права захищені',
     phoneNumber: 'Номер телефону',
     email: 'Електронна пошта',
     ourAddress: 'Наша адреса',
@@ -125,10 +126,12 @@ export const translations = {
     rentNoDriverDesc1: 'Оренда авто у Львові - зручний спосіб пересування містом та регіоном у власному ритмі. Ми пропонуємо сучасні, доглянуті автомобілі для щоденних поїздок, подорожей або ділових справ.',
     rentNoDriverDesc2: 'Прозорі умови оренди, гнучкі терміни та високий рівень сервісу гарантують комфорт і надійність у кожній поїздці.',
     rentNoDriverButton: 'ЗАМОВИТИ АВТО БЕЗ ВОДІЯ',
+    rentNoDriverButtonMobile: 'ЗАМОВИТИ БЕЗ ВОДІЯ',
     rentWithDriverTitle: 'Оренда авто З водієм',
     rentWithDriverDesc1: 'Оренда авто з водієм у Львові - зручне рішення для комфортних і безпечних поїздок містом та за його межами. Ми пропонуємо сучасні автомобілі та професійних водіїв, які добре знають маршрути й завжди дотримуються графіка.',
     rentWithDriverDesc2: 'Послуга підходить для бізнес-поїздок, трансферу в готель, туристичних маршрутів і святкових подій. Гарантуємо високий рівень сервісу, комфорт і конфіденційність.',
     rentWithDriverButton: 'ЗАМОВИТИ АВТО З ВОДІЄМ',
+    rentWithDriverButtonMobile: 'ЗАМОВИТИ З ВОДІЄМ',
 
     // Transfers Section
     transferUkraineTitle: 'Трансфер по україні',
@@ -156,9 +159,10 @@ export const translations = {
   en: {
     // Header
     menu: 'MENU',
+    aboutUs: 'About Us',
     autopark: 'Fleet',
-    rentalConditions: 'Rental Terms',
     services: 'Services',
+    faq: 'FAQ',
     contacts: 'Contacts',
     availableCars: 'AVAILABLE CARS',
     
@@ -207,7 +211,7 @@ export const translations = {
     comfortableRental: 'move confidently with comfort',
     comfortableRentalLine1: 'move confidently',
     comfortableRentalLine2: 'with comfort',
-    footerRights: '© 2025 RentaLviv. All rights reserved',
+    footerRights: '© 2025 TransferLviv. All rights reserved',
     phoneNumber: 'Phone number',
     email: 'Email',
     ourAddress: 'Our address',
@@ -279,10 +283,12 @@ export const translations = {
     rentNoDriverDesc1: 'Car rental in Lviv is a convenient way to get around the city and region at your own pace. We offer modern, well-maintained cars for daily trips, travel, or business purposes.',
     rentNoDriverDesc2: 'Transparent rental terms, flexible periods, and high service level guarantee comfort and reliability on every trip.',
     rentNoDriverButton: 'ORDER CAR WITHOUT DRIVER',
+    rentNoDriverButtonMobile: 'ORDER WITHOUT DRIVER',
     rentWithDriverTitle: 'Car rental WITH driver',
     rentWithDriverDesc1: 'Car rental with a driver in Lviv is a convenient solution for comfortable and safe trips around the city and beyond. We offer modern vehicles and professional drivers who know the routes well and always follow the schedule.',
     rentWithDriverDesc2: 'The service is suitable for business trips, hotel transfers, tourist routes, and festive events. We guarantee high service level, comfort, and confidentiality.',
     rentWithDriverButton: 'ORDER CAR WITH DRIVER',
+    rentWithDriverButtonMobile: 'ORDER WITH DRIVER',
 
     // Transfers Section
     transferUkraineTitle: 'Transfer across Ukraine',

@@ -19,25 +19,25 @@ export default function OtherServicesSection() {
 
         {/* Row 1: Image Left + Content Right */}
         <div 
-          className="w-full rounded-[10px] overflow-hidden flex flex-col lg:flex-row"
+          className="w-full rounded-[10px] overflow-hidden flex flex-col xl:flex-row"
           style={{
             boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
           }}
         >
           {/* Image */}
-          <div className="w-full lg:w-1/2 h-[166px] md:h-[366px]">
+          <div className="w-full xl:w-1/2 h-[166px] md:h-[366px]">
             <img 
-              src="/images/services/rent-no-driver.png" 
+              src="/images/services/rent-no-driver.webp" 
               alt={t('rentNoDriverTitle')} 
               className="w-full h-full object-cover"
             />
           </div>
 
           {/* Content */}
-          <div className="w-full lg:w-1/2 bg-[#F3F3F3] p-[20px] md:p-[50px] flex flex-col gap-[15px] md:gap-[50px]">
+          <div className="w-full xl:w-1/2 bg-[#F3F3F3] p-[20px] md:p-[50px] flex flex-col gap-[15px] md:gap-[50px]">
             {/* Title with icon */}
             <div className="flex flex-col gap-[15px] md:gap-[20px]">
-              <div className="flex items-start md:items-center gap-[15px]">
+              <div className="flex items-center gap-[15px]">
                 {/* Car icon */}
                 <div className="w-[30px] h-[30px] flex-shrink-0">
                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,21 +69,23 @@ export default function OtherServicesSection() {
               href="https://t.me/rentalviv_bot"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] lg:bg-[#070707] overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
               style={{
                 boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
               }}
             >
-              <div className="absolute inset-0 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'radial-gradient(circle, #FFAE00 55%, #F39E00 100%)' }} />
+              <div className="absolute inset-0 transition-opacity duration-300" style={{ background: 'radial-gradient(circle, #FFAE00 55%, #F39E00 100%)' }} />
+              <div className="absolute inset-0 bg-[#070707] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               {/* Telegram icon */}
               <svg viewBox="0 0 24 20" fill="none" className="relative z-10 flex-shrink-0 w-[17px] h-[14px] md:w-[29px] md:h-[24px]">
-                <path d="M22.3 0.1L0.8 8.3C-0.2 8.7-0.2 9.4 0.6 9.7L5.9 11.3L19.2 3.3C19.8 2.9 20.4 3.1 19.9 3.6L8.6 13.8L8.2 19.2C8.7 19.2 8.9 19 9.2 18.7L11.7 16.3L17.1 20.2C18 20.7 18.7 20.4 18.9 19.4L22.8 1.6C23.1 0.4 22.3-0.2 22.3 0.1Z" className="fill-[#070707] lg:fill-white lg:group-hover:fill-[#070707] transition-colors duration-300"/>
+                <path d="M22.3 0.1L0.8 8.3C-0.2 8.7-0.2 9.4 0.6 9.7L5.9 11.3L19.2 3.3C19.8 2.9 20.4 3.1 19.9 3.6L8.6 13.8L8.2 19.2C8.7 19.2 8.9 19 9.2 18.7L11.7 16.3L17.1 20.2C18 20.7 18.7 20.4 18.9 19.4L22.8 1.6C23.1 0.4 22.3-0.2 22.3 0.1Z" className="fill-[#070707] group-hover:fill-white transition-colors duration-300"/>
               </svg>
               <span
-                className="relative z-10 text-[12px] md:text-[22px] text-[#070707] lg:text-white lg:group-hover:text-[#070707] font-bold leading-[100%] uppercase transition-colors duration-300"
+                className="relative z-10 text-[12px] md:text-[22px] text-[#070707] group-hover:text-white font-bold leading-[100%] uppercase transition-colors duration-300"
                 style={{ fontFamily: 'var(--font-unbounded)' }}
               >
-                {t('rentNoDriverButton')}
+                <span className="hidden md:inline">{t('rentNoDriverButton')}</span>
+                <span className="md:hidden">{t('rentNoDriverButtonMobile')}</span>
               </span>
             </Link>
           </div>
@@ -91,16 +93,16 @@ export default function OtherServicesSection() {
 
         {/* Row 2: Content Left + Image Right */}
         <div 
-          className="w-full rounded-[10px] overflow-hidden flex flex-col-reverse lg:flex-row"
+          className="w-full rounded-[10px] overflow-hidden flex flex-col-reverse xl:flex-row"
           style={{
             boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
           }}
         >
           {/* Content */}
-          <div className="w-full lg:w-1/2 bg-[#F3F3F3] p-[20px] md:p-[50px] flex flex-col gap-[15px] md:gap-[50px]">
+          <div className="w-full xl:w-1/2 bg-[#F3F3F3] p-[20px] md:p-[50px] flex flex-col gap-[15px] md:gap-[50px]">
             {/* Title with icon */}
             <div className="flex flex-col gap-[15px] md:gap-[20px]">
-              <div className="flex items-start md:items-center gap-[15px]">
+              <div className="flex items-center gap-[15px]">
                 {/* Car with driver icon */}
                 <div className="w-[30px] h-[30px] flex-shrink-0">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,29 +134,31 @@ export default function OtherServicesSection() {
               href="https://t.me/rentalviv_bot"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] lg:bg-[#070707] overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
               style={{
                 boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
               }}
             >
-              <div className="absolute inset-0 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'radial-gradient(circle, #FFAE00 55%, #F39E00 100%)' }} />
+              <div className="absolute inset-0 transition-opacity duration-300" style={{ background: 'radial-gradient(circle, #FFAE00 55%, #F39E00 100%)' }} />
+              <div className="absolute inset-0 bg-[#070707] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               {/* Telegram icon */}
               <svg viewBox="0 0 24 20" fill="none" className="relative z-10 flex-shrink-0 w-[17px] h-[14px] md:w-[29px] md:h-[24px]">
-                <path d="M22.3 0.1L0.8 8.3C-0.2 8.7-0.2 9.4 0.6 9.7L5.9 11.3L19.2 3.3C19.8 2.9 20.4 3.1 19.9 3.6L8.6 13.8L8.2 19.2C8.7 19.2 8.9 19 9.2 18.7L11.7 16.3L17.1 20.2C18 20.7 18.7 20.4 18.9 19.4L22.8 1.6C23.1 0.4 22.3-0.2 22.3 0.1Z" className="fill-[#070707] lg:fill-white lg:group-hover:fill-[#070707] transition-colors duration-300"/>
+                <path d="M22.3 0.1L0.8 8.3C-0.2 8.7-0.2 9.4 0.6 9.7L5.9 11.3L19.2 3.3C19.8 2.9 20.4 3.1 19.9 3.6L8.6 13.8L8.2 19.2C8.7 19.2 8.9 19 9.2 18.7L11.7 16.3L17.1 20.2C18 20.7 18.7 20.4 18.9 19.4L22.8 1.6C23.1 0.4 22.3-0.2 22.3 0.1Z" className="fill-[#070707] group-hover:fill-white transition-colors duration-300"/>
               </svg>
               <span
-                className="relative z-10 text-[12px] md:text-[24px] text-[#070707] lg:text-white lg:group-hover:text-[#070707] font-bold leading-[100%] uppercase transition-colors duration-300"
+                className="relative z-10 text-[12px] md:text-[22px] text-[#070707] group-hover:text-white font-bold leading-[100%] uppercase transition-colors duration-300"
                 style={{ fontFamily: 'var(--font-unbounded)' }}
               >
-                {t('rentWithDriverButton')}
+                <span className="hidden md:inline">{t('rentWithDriverButton')}</span>
+                <span className="md:hidden">{t('rentWithDriverButtonMobile')}</span>
               </span>
             </Link>
           </div>
 
           {/* Image */}
-          <div className="w-full lg:w-1/2 h-[166px] md:h-[366px]">
+          <div className="w-full xl:w-1/2 h-[166px] md:h-[366px]">
             <img 
-              src="/images/services/rent-with-driver.png" 
+              src="/images/services/rent-with-driver.webp" 
               alt={t('rentWithDriverTitle')} 
               className="w-full h-full object-cover"
             />

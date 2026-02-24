@@ -29,7 +29,7 @@ export default function MobileHeader() {
   return (
     <>
       {/* Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-[#070707] h-[35px] md:h-[56px] flex items-center justify-between px-[15px] py-[5px] md:px-[50px] shadow-[0_0_30px_rgba(0,0,0,1)] md:shadow-[0_0_70px_rgba(0,0,0,1)]">
+      <header className="xl:hidden fixed top-0 left-0 right-0 z-50 bg-[#070707] h-[35px] md:h-[56px] flex items-center justify-between px-[15px] py-[5px] md:px-[50px] shadow-[0_0_30px_rgba(0,0,0,1)] md:shadow-[0_0_70px_rgba(0,0,0,1)]">
         {/* Left Part - Navigation */}
         <div className="flex items-center gap-[15px]">
           {/* Menu Button */}
@@ -213,61 +213,14 @@ export default function MobileHeader() {
             )}
           </div>
 
-          {/* Social Icons - Mobile only */}
-          <div className="flex md:hidden items-center gap-[5px] relative">
-            <button
-              onClick={() => {
-                setIsSocialOpen(!isSocialOpen);
-                setIsCurrencyOpen(false);
-                setIsLanguageOpen(false);
-              }}
-              className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
-              aria-label="Відкрити меню соціальних мереж"
-              aria-expanded={isSocialOpen}
-            >
-              <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[13px] h-[13px]" />
-            </button>
-            <button onClick={() => {
-              setIsSocialOpen(!isSocialOpen);
-              setIsCurrencyOpen(false);
-              setIsLanguageOpen(false);
-            }} aria-label="Розгорнути меню соціальних мереж" aria-expanded={isSocialOpen}>
-              <svg width="6" height="20" viewBox="0 0 6 20" fill="white" aria-hidden="true" className={`transition-transform duration-300 ${isSocialOpen ? 'rotate-180' : ''}`}>
-                <path d="M3 13.3333L0 10.3333L6 10.3333L3 13.3333Z" fill={isSocialOpen ? '#FFAE00' : 'white'} />
-              </svg>
-            </button>
-            {isSocialOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-[#1a1a1a] rounded-[20px] p-2 shadow-[0_0_50px_rgba(0,0,0,0.8)] z-[60] flex gap-2">
-                <a 
-                  href="https://t.me/rentalviv1" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
-                  aria-label="Telegram - зв'язатись з нами"
-                >
-                  <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[15px] h-[15px]" />
-                </a>
-                <a 
-                  href="https://wa.me/380777877087" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
-                  aria-label="WhatsApp - зв'язатись з нами"
-                >
-                  <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[15px] h-[15px]" />
-                </a>
-                <a 
-                  href="https://instagram.com/rentalviv" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
-                  aria-label="Instagram - наш профіль"
-                >
-                  <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[15px] h-[15px]" />
-                </a>
-              </div>
-            )}
-          </div>
+          {/* Phone Number - Mobile only */}
+          <a 
+            href="tel:+380777877087"
+            className="flex md:hidden text-white text-[8px] font-black leading-[120%] hover:text-[#FFAE00] transition-colors"
+            style={{ fontFamily: 'var(--font-unbounded)' }}
+          >
+            0 777 877 087
+          </a>
 
           {/* Phone Number - Tablet only */}
           <a 
@@ -283,9 +236,17 @@ export default function MobileHeader() {
       {/* Menu Dropdown - Tablet version */}
       {isMenuOpen && (
         <div 
-          className="hidden md:block lg:hidden fixed top-[56px] left-5 z-40 w-[95px]"
+          className="hidden md:block xl:hidden fixed top-[56px] left-5 z-40 w-[95px]"
         >
           <nav className="bg-[#070707] rounded-b-[10px] px-[15px] py-[15px] flex flex-col gap-[15px] shadow-[0_0_30px_rgba(0,0,0,1)] ">
+            <Link 
+              href="/#about" 
+              onClick={toggleMenu}
+              className="text-white text-sm leading-none hover:text-[#FFAE00] transition-colors"
+              style={{ fontFamily: 'var(--font-nunito-sans)' }}
+            >
+              {t('aboutUs')}
+            </Link>
             <Link 
               href="/#autopark" 
               onClick={toggleMenu}
@@ -295,20 +256,20 @@ export default function MobileHeader() {
               {t('autopark')}
             </Link>
             <Link 
-              href="/#rental-conditions" 
-              onClick={toggleMenu}
-              className="text-white text-sm leading-none hover:text-[#FFAE00] transition-colors"
-              style={{ fontFamily: 'var(--font-nunito-sans)' }}
-            >
-              {t('rentalConditions')}
-            </Link>
-            <Link 
               href="/#services" 
               onClick={toggleMenu}
               className="text-white text-sm leading-none hover:text-[#FFAE00] transition-colors"
               style={{ fontFamily: 'var(--font-nunito-sans)' }}
             >
               {t('services')}
+            </Link>
+            <Link 
+              href="/#faq" 
+              onClick={toggleMenu}
+              className="text-white text-sm leading-none hover:text-[#FFAE00] transition-colors"
+              style={{ fontFamily: 'var(--font-nunito-sans)' }}
+            >
+              {t('faq')}
             </Link>
             <Link 
               href="/#contacts" 
@@ -329,10 +290,17 @@ export default function MobileHeader() {
           style={{ maxHeight: 'calc(100vh )' }}
         >
           <div className="flex flex-col items-center pt-[9px] px-[12.5px]">
-           
 
             {/* Menu Items */}
             <nav className="bg-[#070707] rounded-[10px] px-[15px] py-[15px] flex flex-col items-center gap-[15px] w-full max-w-[295px] mb-[30px]">
+              <Link 
+                href="/#about" 
+                onClick={toggleMenu}
+                className="text-white text-[12px] leading-none text-center"
+                style={{ fontFamily: 'var(--font-nunito-sans)' }}
+              >
+                {t('aboutUs')}
+              </Link>
               <Link 
                 href="/#autopark" 
                 onClick={toggleMenu}
@@ -342,20 +310,20 @@ export default function MobileHeader() {
                 {t('autopark')}
               </Link>
               <Link 
-                href="/#rental-conditions" 
-                onClick={toggleMenu}
-                className="text-white text-[12px] leading-none text-center"
-                style={{ fontFamily: 'var(--font-nunito-sans)' }}
-              >
-                {t('rentalConditions')}
-              </Link>
-              <Link 
                 href="/#services" 
                 onClick={toggleMenu}
                 className="text-white text-[12px] leading-none text-center"
                 style={{ fontFamily: 'var(--font-nunito-sans)' }}
               >
                 {t('services')}
+              </Link>
+              <Link 
+                href="/#faq" 
+                onClick={toggleMenu}
+                className="text-white text-[12px] leading-none text-center"
+                style={{ fontFamily: 'var(--font-nunito-sans)' }}
+              >
+                {t('faq')}
               </Link>
               <Link 
                 href="/#contacts" 
@@ -367,54 +335,39 @@ export default function MobileHeader() {
               </Link>
             </nav>
 
-            {/* Phone Number */}
-            <a
-              href="tel:+380777877087"
-              className="text-white text-[10px] font-black leading-[120%] mb-[30px]"
-              style={{ fontFamily: 'var(--font-unbounded)' }}
-            >
-              +380 777 877 087
-            </a>
+            {/* Social Icons */}
+            <div className="flex items-center gap-[10px] mb-[30px]">
+              <a 
+                href="https://t.me/rentalviv1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
+                aria-label="Telegram"
+              >
+                <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[15px] h-[15px]" />
+              </a>
+              <a 
+                href="https://wa.me/380777877087" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
+                aria-label="WhatsApp"
+              >
+                <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[15px] h-[15px]" />
+              </a>
+              <a 
+                href="https://instagram.com/rentalviv" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
+                aria-label="Instagram"
+              >
+                <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[15px] h-[15px]" />
+              </a>
+            </div>
 
-            {/* Currency & Language */}
+            {/* Language Selector */}
             <div className="flex items-center gap-[15px] mb-[20px]">
-              {/* Currency Selector */}
-              <div className="relative">
-                <button 
-                  onClick={() => {
-                    setIsCurrencyOpen(!isCurrencyOpen);
-                    setIsLanguageOpen(false);
-                  }}
-                  className="flex items-center gap-[5px]"
-                  aria-label={`Вибрати валюту, поточна: ${currencySymbol}`}
-                  aria-expanded={isCurrencyOpen}
-                >
-                  <span className="text-white text-[16px] font-bold">{currencySymbol}</span>
-                  <svg width="6" height="24" viewBox="0 0 6 24" fill="white" className={`transition-transform duration-300 ${isCurrencyOpen ? 'rotate-180' : ''}`}>
-                    <path d="M3 16L0 13L6 13L3 16Z" fill={isCurrencyOpen ? '#FFAE00' : 'white'} />
-                  </svg>
-                </button>
-                {isCurrencyOpen && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-[#1a1a1a] rounded-[20px] p-3 shadow-[0_0_50px_rgba(0,0,0,0.8)] min-w-[80px] z-[60]">
-                    {currencies.map((curr) => (
-                      <button
-                        key={curr}
-                        onClick={() => {
-                          setCurrency(curr);
-                          setIsCurrencyOpen(false);
-                        }}
-                        className={`w-full px-3 py-2 text-xl text-center rounded-[10px] transition-all ${
-                          currentCurrency === curr ? 'text-white bg-[#2a2a2a]' : 'text-gray-500 hover:text-white hover:bg-[#2a2a2a]'
-                        }`}
-                      >
-                        {currencySymbols[curr]}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Language Selector */}
               <div className="relative">
                 <button 
                   onClick={() => {
@@ -465,7 +418,7 @@ export default function MobileHeader() {
       {/* Backdrop overlay - Tablet */}
       {isMenuOpen && (
         <div 
-          className="hidden md:block lg:hidden fixed inset-0 z-30"
+          className="hidden md:block xl:hidden fixed inset-0 z-30"
           onClick={toggleMenu}
         />
       )}

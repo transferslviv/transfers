@@ -69,19 +69,19 @@ export default function AutoparkSection() {
   }, [isAnimating, totalSlides]);
 
   return (
-    <section className="w-full bg-[#BCC4C7] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
+    <section id="autopark" className="w-full bg-[#BCC4C7] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
       <div className="flex flex-col items-center gap-[40px] md:gap-[80px] w-full max-w-[1425px] mx-auto">
         
         {/* Title - Mobile/Tablet only */}
         <h2 
-          className="lg:hidden text-[30px] md:text-[60px] text-[#070707] font-black leading-[100%]"
+          className="xl:hidden text-[30px] md:text-[60px] text-[#070707] font-black leading-[100%]"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
           {t('autoparkSectionTitle')}
         </h2>
 
         {/* Header Row - Desktop only (Title + Button) */}
-        <div className="hidden lg:flex flex-row items-center justify-between gap-[20px] w-full">
+        <div className="hidden xl:flex flex-row items-center justify-between gap-[20px] w-full">
           <h2 
             className="text-[60px] text-[#070707] font-black leading-[100%]"
             style={{ fontFamily: 'var(--font-unbounded)' }}
@@ -111,8 +111,8 @@ export default function AutoparkSection() {
             className="flex flex-shrink-0 items-center justify-center transition-all hover:scale-110 cursor-pointer group mr-[10px] md:mr-[30px]"
             aria-label="Попередній слайд"
           >
-            <svg viewBox="0 0 27 15" fill="none" className="w-[18px] h-[10px] md:w-[27px] md:h-[15px] rotate-90">
-              <path d="M13.5 15L0 0L27 0L13.5 15Z" className="fill-[#070707] lg:fill-white lg:group-hover:fill-[#070707] transition-colors"/>
+            <svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[10px] h-[18px] md:w-[15px] md:h-[27px]">
+              <path d="M15 24.9136L15 12.8992V2.08039C15 0.229049 12.7233 -0.696622 11.3886 0.614746L1.22179 10.6043C-0.407263 12.2049 -0.407263 14.8084 1.22179 16.409L5.08832 20.2081L11.3886 26.3985C12.7233 27.6906 15 26.765 15 24.9136Z" className="fill-[#070707] group-hover:fill-white transition-colors"/>
             </svg>
           </button>
 
@@ -145,8 +145,8 @@ export default function AutoparkSection() {
             className="flex flex-shrink-0 items-center justify-center transition-all hover:scale-110 cursor-pointer group ml-[10px] md:ml-[30px]"
             aria-label="Наступний слайд"
           >
-            <svg viewBox="0 0 27 15" fill="none" className="w-[18px] h-[10px] md:w-[27px] md:h-[15px] -rotate-90">
-              <path d="M13.5 15L0 0L27 0L13.5 15Z" className="fill-[#070707] lg:fill-white lg:group-hover:fill-[#070707] transition-colors"/>
+            <svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[10px] h-[18px] md:w-[15px] md:h-[27px]">
+              <path d="M0 24.9136L0 12.8992L0 2.08039C0 0.229049 2.27674 -0.696622 3.61138 0.614746L13.7782 10.6043C15.4073 12.2049 15.4073 14.8084 13.7782 16.409L9.91168 20.2081L3.61138 26.3985C2.27674 27.6906 0 26.765 0 24.9136Z" className="fill-[#070707] group-hover:fill-white transition-colors"/>
             </svg>
           </button>
         </div>
@@ -156,7 +156,7 @@ export default function AutoparkSection() {
           href="https://t.me/rentalviv_bot"
           target="_blank"
           rel="noopener noreferrer"
-          className="lg:hidden group flex items-center justify-center w-full md:w-auto px-[20px] md:px-[50px] py-[14px] md:py-[20px] bg-transparent border-2 border-[#070707] hover:border-white rounded-[8px] md:rounded-[10px] transition-all"
+          className="xl:hidden group flex items-center justify-center w-full md:w-auto px-[20px] md:px-[50px] py-[14px] md:py-[20px] bg-transparent border-2 border-[#070707] hover:border-white rounded-[8px] md:rounded-[10px] transition-all"
         >
           <span 
             className="text-[14px] md:text-[24px] text-[#070707] group-hover:text-white font-bold leading-[100%] uppercase transition-colors"
