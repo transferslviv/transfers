@@ -66,11 +66,14 @@ export default function Header() {
         </nav>
 
         {/* Center - Logo */}
-        <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center px-8 xl:px-12 2xl:px-14 py-3 xl:py-3.5 2xl:py-4 bg-[#070707] rounded-full top-2 shadow-[0_0_70px_rgba(0,0,0,1)] group">
+        <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center top-0 group">
+          <svg className="absolute top-10 left-1/2 -translate-x-1/2 w-[280px] xl:w-[340px] 2xl:w-[400px] h-auto" viewBox="0 0 242 39" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 40px rgba(0,0,0,0.8))' }}>
+            <path d="M241.965 19.2554C241.965 19.2554 187.799 38.5107 120.982 38.5107C54.1657 38.5107 0 19.2554 0 19.2554C0 19.2554 54.1657 0 120.982 0C187.799 0 241.965 19.2554 241.965 19.2554Z" fill="#070707" />
+          </svg>
          <img 
            src="/images/logo.svg" 
            alt="TransferLviv" 
-           className="h-8 xl:h-10 2xl:h-12 transition-all duration-300"
+           className="relative z-10 h-8 xl:h-10 2xl:h-12 transition-all duration-300 mt-[16px] xl:mt-[28px] 2xl:mt-[30px]"
            style={{
              filter: 'brightness(1)',
            }}

@@ -16,7 +16,7 @@ const nunitoSans = Nunito_Sans({
 const unbounded = Unbounded({
   variable: "--font-unbounded",
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "700", "800", "900"],
+  weight: ["300", "400", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {

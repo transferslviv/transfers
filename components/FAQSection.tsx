@@ -110,21 +110,21 @@ export default function FAQSection() {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(isActive ? null : index)}
-                  className="relative w-full flex items-center justify-between px-[50px] py-[20px] rounded-[10px] transition-all duration-300 cursor-pointer overflow-hidden group"
+                  className="relative w-full flex items-center justify-between px-[50px] py-[20px] rounded-[10px] transition-all duration-300 cursor-pointer group"
                   style={isActive ? {
                     background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
                     boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
                   } : undefined}
                 >
-                  <span className="absolute inset-0 rounded-[10px] pointer-events-none z-20 transition-all duration-300"
+                  <span className="absolute inset-[-1.5px] rounded-[10px] pointer-events-none z-20 transition-all duration-300"
                     style={{
-                      padding: isActive ? '2.5px' : '2.5px',
                       background: isActive
-                        ? 'linear-gradient(to bottom, rgba(255,255,255,0.29), rgba(255,255,255,1))'
+                        ? 'linear-gradient(to right, rgba(255,255,255,0.29), rgba(255,255,255,1))'
                         : '#070707',
                       WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
                       WebkitMaskComposite: 'xor',
                       maskComposite: 'exclude',
+                      padding: '1.5px',
                     }}
                   />
                   <span
@@ -177,21 +177,21 @@ export default function FAQSection() {
               <div key={index} className="flex flex-col gap-[15px] md:gap-[20px]">
                 <button
                   onClick={() => setActiveIndex(isActive ? null : index)}
-                  className="relative w-full flex items-center justify-between px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] transition-all duration-300 cursor-pointer overflow-hidden group"
+                  className="relative w-full flex items-center justify-between px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] transition-all duration-300 cursor-pointer group"
                   style={isActive ? {
                     background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
                     boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
                   } : undefined}
                 >
-                  <span className="absolute inset-0 rounded-[8px] md:rounded-[10px] pointer-events-none z-20 transition-all duration-300"
+                  <span className="absolute inset-[-1.5px] rounded-[8px] md:rounded-[10px] pointer-events-none z-20 transition-all duration-300"
                     style={{
-                      padding: isActive ? '1.5px' : '2.5px',
                       background: isActive
-                        ? 'linear-gradient(to bottom, rgba(255,255,255,0.29), rgba(255,255,255,1))'
+                        ? 'linear-gradient(to right, rgba(255,255,255,0.29), rgba(255,255,255,1))'
                         : '#070707',
                       WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
                       WebkitMaskComposite: 'xor',
                       maskComposite: 'exclude',
+                      padding: '1.5px',
                     }}
                   />
                   <span

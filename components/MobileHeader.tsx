@@ -52,42 +52,7 @@ export default function MobileHeader() {
 
           {/* Currency & Language - Tablet only */}
           <div className="hidden md:flex items-center gap-[15px]">
-            {/* Currency Selector */}
-            <div className="relative">
-              <button 
-                onClick={() => {
-                  setIsCurrencyOpen(!isCurrencyOpen);
-                  setIsLanguageOpen(false);
-                  setIsMenuOpen(false);
-                }}
-                className="flex items-center gap-[5px]"
-                aria-label={`Вибрати валюту, поточна: ${currencySymbol}`}
-                aria-expanded={isCurrencyOpen}
-              >
-                <span className="text-white text-lg">{currencySymbol}</span>
-                <svg width="9" height="30" viewBox="0 0 9 30" fill="none" className={`transition-transform duration-300 ${isCurrencyOpen ? 'rotate-180' : ''}`}>
-                  <path d="M4.5 18L0 13L9 13L4.5 18Z" fill={isCurrencyOpen ? '#FFAE00' : 'white'}/>
-                </svg>
-              </button>
-              {isCurrencyOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 bg-[#1a1a1a] rounded-[20px] p-4 shadow-[0_0_50px_rgba(0,0,0,0.8)] min-w-[100px] z-[60]">
-                  {currencies.map((curr) => (
-                    <button
-                      key={curr}
-                      onClick={() => {
-                        setCurrency(curr);
-                        setIsCurrencyOpen(false);
-                      }}
-                      className={`w-full px-4 py-3 text-2xl text-center rounded-[10px] transition-all ${
-                        currentCurrency === curr ? 'text-white bg-[#2a2a2a]' : 'text-gray-500 hover:text-white hover:bg-[#2a2a2a]'
-                      }`}
-                    >
-                      {currencySymbols[curr]}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+
 
             {/* Language Selector */}
             <div className="relative">
@@ -129,12 +94,15 @@ export default function MobileHeader() {
         </div>
 
         {/* Logo - Center */}
-        <div className="absolute left-1/2 -translate-x-1/2 bg-[#070707] px-8 py-2 rounded-full shadow-[0_0_30px_rgba(0,0,0,1)] top-2">
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 flex items-center justify-center">
+          <svg className="absolute top-5 md:top-8 left-1/2 -translate-x-1/2 w-[180px] md:w-[280px] h-auto" viewBox="0 0 242 39" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 30px rgba(0,0,0,0.8))' }}>
+            <path d="M241.965 19.2554C241.965 19.2554 187.799 38.5107 120.982 38.5107C54.1657 38.5107 0 19.2554 0 19.2554C0 19.2554 54.1657 0 120.982 0C187.799 0 241.965 19.2554 241.965 19.2554Z" fill="#070707" />
+          </svg>
           <Link href="/">
             <img 
               src="/images/logo.svg" 
               alt="TransferLviv" 
-              className="h-[30px] md:h-[45px] transition-all duration-300"
+              className="relative z-10 h-[25px] md:h-[45px] transition-all duration-300 mt-[14px] md:mt-[16px]"
               style={{
                 filter: 'brightness(1)',
               }}
@@ -228,7 +196,7 @@ export default function MobileHeader() {
             className="hidden md:block text-white text-[16px] font-black leading-[120%] hover:text-[#FFAE00] transition-colors"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            +380 777 877 087
+            0 777 877 087
           </a>
         </div>
       </header>

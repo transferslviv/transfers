@@ -7,7 +7,7 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="relative w-full h-[500px] md:h-[calc(100vh-70px)] flex flex-col justify-between items-center px-[15px] md:px-[50px] py-[50px] md:py-[170px] xl:py-[100px] bg-[url('/images/hero-bg.webp')] md:bg-[url('/images/hero-bg-tablet.webp')] xl:bg-[url('/images/hero-bg.webp')] bg-cover bg-center bg-no-repeat"
+      className="relative w-full h-[500px] md:h-[calc(100vh-70px)] flex flex-col justify-between items-center px-[15px] md:px-[50px] py-[50px] md:py-[120px] xl:py-[100px] bg-[url('/images/hero-bg.webp')] md:bg-[url('/images/hero-bg-tablet.webp')] xl:bg-[url('/images/hero-bg.webp')] bg-cover bg-center bg-no-repeat"
     >
      
       {/* Title Section */}
@@ -36,13 +36,13 @@ export default function HeroSection() {
         href="https://t.me/rentalviv_bot"
         target="_blank"
         rel="noopener noreferrer" 
-        className="relative z-10 w-full sm:w-auto flex items-center justify-center gap-[10px] px-[30px] md:px-[50px] py-[15px] md:py-[20px] rounded-[10px] text-[#070707] transition-all duration-300 hover:scale-105 overflow-hidden group bg-transparent sm:bg-[#F3F3F3] sm:hover:bg-transparent"
+        className="relative z-10 w-full sm:w-auto flex items-center justify-center gap-[10px] px-[30px] md:px-[50px] py-[15px] md:py-[20px] rounded-[10px] text-[#070707] transition-all duration-300 hover:scale-105 overflow-hidden group bg-transparent sm:bg-transparent sm:hover:bg-[#F3F3F3]"
         style={{
           boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
         }}
       >
-        {/* Orange gradient background - always visible on mobile, on hover for desktop */}
-        <span className="absolute inset-0 rounded-[10px] opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 z-0"
+        {/* Orange gradient background - always visible on mobile and desktop, hidden on hover for desktop */}
+        <span className="absolute inset-0 rounded-[10px] opacity-100 sm:opacity-100 sm:group-hover:opacity-0 transition-opacity duration-300 z-0"
           style={{ background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)' }}
         />
         {/* Gradient border */}
@@ -56,7 +56,7 @@ export default function HeroSection() {
           }}
         />
         <span 
-          className="relative z-10 text-[14px] sm:text-[16px] md:text-[24px] text-[#070707] font-bold leading-[100%] tracking-wide uppercase"
+          className="relative z-10 text-[12px] sm:text-[16px] md:text-[24px] text-[#070707] font-bold leading-[100%] tracking-wide uppercase"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
           {t('heroCTA')}

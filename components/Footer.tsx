@@ -23,9 +23,9 @@ export default function Footer() {
                 style={{ fontFamily: 'var(--font-unbounded)' }}
               >
                 <span className="font-black">TransferLviv</span>
-                <span className="font-normal"> —</span><br />
-                <span className="font-normal">{t('comfortableRentalLine1')}</span><br />
-                <span className="font-normal">{t('comfortableRentalLine2')}</span>
+                <span className="font-light"> —</span><br />
+                <span className="font-light">{t('comfortableRentalLine1')}</span><br />
+                <span className="font-light">{t('comfortableRentalLine2')}</span>
               </p>
               <p 
                 className="text-white text-[10px] xl:text-xs 2xl:text-sm leading-[120%]"
@@ -181,9 +181,9 @@ export default function Footer() {
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
             <span className="font-black">TransferLviv</span>
-            <span className="font-normal"> —</span><br />
-            <span className="font-normal">{t('comfortableRentalLine1')}</span><br />
-            <span className="font-normal">{t('comfortableRentalLine2')}</span>
+            <span className="font-light"> —</span><br />
+            <span className="font-light">{t('comfortableRentalLine1')}</span><br />
+            <span className="font-light">{t('comfortableRentalLine2')}</span>
           </p>
         </div>
 

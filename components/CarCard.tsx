@@ -77,7 +77,7 @@ export default function CarCard({ car }: CarCardProps) {
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className="flex-1 min-h-0 rounded-[8px] overflow-hidden border-2 border-transparent hover:border-[#070707] transition-all"
+                className="flex-1 min-h-0 rounded-[10px] md:rounded-[8px] overflow-hidden border-2 border-transparent hover:border-[#070707] transition-all"
               >
                 <img 
                   src={image} 
@@ -108,7 +108,7 @@ export default function CarCard({ car }: CarCardProps) {
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className="flex-1 h-[39px] rounded-[4px] overflow-hidden border-2 border-transparent transition-all"
+                className="flex-1 aspect-square rounded-[10px] md:rounded-[8px] overflow-hidden border-2 border-transparent transition-all"
               >
                 <img 
                   src={image} 

@@ -109,7 +109,7 @@ function TransferSlider({ title, transfers, description, darkButton = false }: T
       {/* Description Text */}
       <div className="w-full px-[25px] md:px-[65px] xl:px-[65px]">
         <div className="text-[12px] md:text-[18px] text-[#F3F3F3] leading-[120%]"
-          style={{ fontFamily: 'var(--font-nunito)' }}
+          style={{ fontFamily: 'var(--font-nunito-sans)' }}
         >
           {description}
         </div>
@@ -131,14 +131,14 @@ export default function TransfersSection() {
           transfers={ukraineTransfers}
           description={
             <>
-              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
+              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
                 {t('transferUkraineSubtitle')}
               </p>
               <p className="mb-[16px]">
-                {t('transferUkraineDesc1')}
+                Ми надаємо <b>індивідуальні міжміські трансфери по Україні</b> на преміальних автомобілях <b>BMW 7 Series</b> та <b>Mercedes-Benz S-Class (W222)</b> з професійним водієм. Поїздки виконуються <b>без попутників</b>, з повною приватністю та максимальним комфортом.
               </p>
               <p className="mb-[16px]">
-                {t('transferUkraineDesc2')}
+                Найчастіше трансфери здійснюються <b>зі Львова або у Львів</b>, однак ми також виконуємо <b>попутні трансфери між іншими містами України</b>. Маршрут, час виїзду та всі деталі поїздки узгоджуються індивідуально, з урахуванням поточної дорожньої ситуації та вимог безпеки.
               </p>
               <p>
                 {t('transferUkraineDesc3')}
@@ -153,11 +153,11 @@ export default function TransfersSection() {
           transfers={europeTransfers}
           description={
             <>
-              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
+              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
                 {t('transferEuropeSubtitle')}
               </p>
               <p className="mb-[16px]">
-                {t('transferEuropeDesc1')}
+                Ми організовуємо <b>індивідуальні преміальні трансфери</b> між містами України та Європи, а також між європейськими містами. Поїздки здійснюються на <b>BMW 7 Series</b> та <b>Mercedes-Benz S-Class (W222)</b> з професійним водієм, <b>без попутників</b>, з максимальним комфортом та приватністю.
               </p>
               <p>
                 {t('transferEuropeDesc2')}
@@ -173,14 +173,11 @@ export default function TransfersSection() {
           darkButton={true}
           description={
             <>
-              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito)' }}>
+              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
                 {t('transferLvivSubtitle')}
               </p>
-              <p className="mb-[16px]">
-                {t('transferLvivDesc1')}
-              </p>
               <p>
-                {t('transferLvivDesc2')}
+                Надаємо комфортний трансфер по місту Львів за попередньою домовленістю до популярних локацій, зокрема <b>Emily Resort</b>, <b>Edem Resort</b>, <b>залізничного вокзалу</b> та <b>автовокзалу</b>. Водночас маршрут не обмежується фіксованими напрямками — ми організуємо <b>індивідуальний трансфер</b> відповідно до вашого запиту, з урахуванням часу, місця та побажань до поїздки.
               </p>
             </>
           }

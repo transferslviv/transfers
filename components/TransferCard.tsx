@@ -53,7 +53,7 @@ export default function TransferCard({ transfer, darkButton = false }: TransferC
       {/* Title */}
       <p
         className="text-[16px] text-[#070707] font-black text-center leading-[120%] whitespace-pre-line uppercase"
-        style={{ fontFamily: 'var(--font-nunito)' }}
+        style={{ fontFamily: 'var(--font-nunito-sans)' }}
       >
         {title}
       </p>
