@@ -120,40 +120,46 @@ export default function CarCard({ car }: CarCardProps) {
         </div>
       </div>
 
-      {/* Title */}
-      <div className="flex flex-col gap-[5px] min-w-0 flex-shrink">
-        <h3 
-          className="text-[20px] md:text-[24px] text-[#070707] font-black leading-[120%]"
-          style={{ fontFamily: 'var(--font-nunito-sans)' }}
-        >
-          {car.name}
-        </h3>
-        <p 
-          className="text-[12px] md:text-[14px] text-[#070707] leading-[100%]"
-          style={{ fontFamily: 'var(--font-nunito-sans)' }}
-        >
-          {car.description}
-        </p>
-      </div>
+      {/* Title + Icons - Mobile: stacked, Desktop: side by side */}
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-[15px] md:gap-[20px] min-w-0 flex-shrink mt-auto">
+        <div className="flex flex-col gap-[5px] min-w-0 flex-shrink">
+          <h3 
+            className="text-[20px] md:text-[24px] text-[#070707] font-black leading-[120%]"
+            style={{ fontFamily: 'var(--font-nunito-sans)' }}
+          >
+            {car.name}
+          </h3>
+          <p 
+            className="text-[12px] md:text-[14px] text-[#070707] leading-[100%]"
+            style={{ fontFamily: 'var(--font-nunito-sans)' }}
+          >
+            {car.description}
+          </p>
+        </div>
 
-      {/* Icons */}
-      <div className="flex items-center gap-[10px] md:gap-[20px] flex-shrink-0 mt-auto">
-        <div className="relative flex items-center justify-center">
-          <img src="/images/cars/people.svg" alt="Пасажири" className="w-[40px] h-[40px]" />
+        {/* Icons */}
+        <div className="flex items-center gap-[10px] md:gap-[15px] flex-shrink-0">
+          {(car.showPassengers !== false) && (
+            <div className="relative flex items-center justify-center">
+              <img src="/images/cars/people.svg" alt="Пасажири" className="w-[40px] h-[40px]" />
+            </div>
+          )}
+          {(car.showLuggage !== false) && (
+            <div className="relative flex items-center justify-center">
+              <img src="/images/cars/bag.svg" alt="Багаж" className="w-[40px] h-[40px]" />
+            </div>
+          )}
+          {car.child && (
+            <div className="flex items-center justify-center">
+              <img src="/images/cars/child.svg" alt="Дитяче крісло" className="w-[40px] h-[40px]" />
+            </div>
+          )}
+          {car.pet && (
+            <div className="flex items-center justify-center">
+              <img src="/images/cars/pet.svg" alt="Тварини" className="w-[40px] h-[40px]" />
+            </div>
+          )}
         </div>
-        <div className="relative flex items-center justify-center">
-          <img src="/images/cars/bag.svg" alt="Багаж" className="w-[40px] h-[40px]" />
-        </div>
-        {car.child && (
-          <div className="flex items-center justify-center">
-            <img src="/images/cars/child.svg" alt="Дитяче крісло" className="w-[40px] h-[40px]" />
-          </div>
-        )}
-        {car.pet && (
-          <div className="flex items-center justify-center">
-            <img src="/images/cars/pet.svg" alt="Тварини" className="w-[40px] h-[40px]" />
-          </div>
-        )}
       </div>
     </div>
   );

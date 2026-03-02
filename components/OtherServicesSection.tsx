@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSiteSettings } from '@/contexts/SiteSettingsContext';
 
 export default function OtherServicesSection() {
   const { t } = useLanguage();
+  const { settings } = useSiteSettings();
   return (
     <section className="w-full bg-[#BCC4C7] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
       <div className="flex flex-col items-center gap-[40px] md:gap-[80px] w-full max-w-[1425px] mx-auto">
@@ -66,22 +68,31 @@ export default function OtherServicesSection() {
 
             {/* Button */}
             <Link
-              href="https://t.me/rentalviv_bot"
+              href={settings.telegramBot}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[10px] transition-all hover:scale-105"
               style={{
+                background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
                 boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
               }}
             >
-              <div className="absolute inset-0 transition-opacity duration-300" style={{ background: 'radial-gradient(circle, #FFAE00 55%, #F39E00 100%)' }} />
-              <div className="absolute inset-0 bg-[#070707] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Gradient border */}
+              <span className="absolute inset-[-2px] rounded-[12px] pointer-events-none z-20"
+                style={{
+                  background: 'linear-gradient(to right, rgba(255,255,255,0.29), rgba(255,255,255,1))',
+                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  maskComposite: 'exclude',
+                  padding: '2px',
+                }}
+              />
               {/* Telegram icon */}
-              <svg viewBox="0 0 24 20" fill="none" className="relative z-10 flex-shrink-0 w-[17px] h-[14px] md:w-[29px] md:h-[24px]">
-                <path d="M22.3 0.1L0.8 8.3C-0.2 8.7-0.2 9.4 0.6 9.7L5.9 11.3L19.2 3.3C19.8 2.9 20.4 3.1 19.9 3.6L8.6 13.8L8.2 19.2C8.7 19.2 8.9 19 9.2 18.7L11.7 16.3L17.1 20.2C18 20.7 18.7 20.4 18.9 19.4L22.8 1.6C23.1 0.4 22.3-0.2 22.3 0.1Z" className="fill-[#070707] group-hover:fill-white transition-colors duration-300"/>
+              <svg viewBox="0 0 20 17" fill="none" className="relative z-10 flex-shrink-0 w-[17px] h-[14px] md:w-[24px] md:h-[20px]">
+                <path d="M19.9391 1.55742L16.9297 15.7708C16.7213 16.7795 16.1128 17.0212 15.2625 16.5544L10.6775 13.1615L8.46005 15.3039C8.20997 15.554 8.00156 15.7708 7.54306 15.7708C6.94285 15.7708 7.04289 15.5457 6.84282 14.9788L5.25892 9.81867L0.715654 8.4015C-0.268026 8.10973 -0.276363 7.43449 0.932397 6.94265L18.6553 0.106905C19.4639 -0.251555 20.2392 0.306976 19.9308 1.54908L19.9391 1.55742Z" fill="#070707"/>
               </svg>
               <span
-                className="relative z-10 text-[12px] md:text-[22px] text-[#070707] group-hover:text-white font-bold leading-[100%] uppercase transition-colors duration-300"
+                className="relative z-10 text-[12px] md:text-[22px] text-[#070707] font-bold leading-[100%] uppercase"
                 style={{ fontFamily: 'var(--font-unbounded)' }}
               >
                 <span className="hidden md:inline">{t('rentNoDriverButton')}</span>
@@ -131,22 +142,31 @@ export default function OtherServicesSection() {
 
             {/* Button */}
             <Link
-              href="https://t.me/rentalviv_bot"
+              href={settings.telegramBot}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[8px] md:rounded-[10px] overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[10px] transition-all hover:scale-105"
               style={{
+                background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
                 boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
               }}
             >
-              <div className="absolute inset-0 transition-opacity duration-300" style={{ background: 'radial-gradient(circle, #FFAE00 55%, #F39E00 100%)' }} />
-              <div className="absolute inset-0 bg-[#070707] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Gradient border */}
+              <span className="absolute inset-[-2px] rounded-[12px] pointer-events-none z-20"
+                style={{
+                  background: 'linear-gradient(to right, rgba(255,255,255,0.29), rgba(255,255,255,1))',
+                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  maskComposite: 'exclude',
+                  padding: '2px',
+                }}
+              />
               {/* Telegram icon */}
-              <svg viewBox="0 0 24 20" fill="none" className="relative z-10 flex-shrink-0 w-[17px] h-[14px] md:w-[29px] md:h-[24px]">
-                <path d="M22.3 0.1L0.8 8.3C-0.2 8.7-0.2 9.4 0.6 9.7L5.9 11.3L19.2 3.3C19.8 2.9 20.4 3.1 19.9 3.6L8.6 13.8L8.2 19.2C8.7 19.2 8.9 19 9.2 18.7L11.7 16.3L17.1 20.2C18 20.7 18.7 20.4 18.9 19.4L22.8 1.6C23.1 0.4 22.3-0.2 22.3 0.1Z" className="fill-[#070707] group-hover:fill-white transition-colors duration-300"/>
+              <svg viewBox="0 0 20 17" fill="none" className="relative z-10 flex-shrink-0 w-[17px] h-[14px] md:w-[24px] md:h-[20px]">
+                <path d="M19.9391 1.55742L16.9297 15.7708C16.7213 16.7795 16.1128 17.0212 15.2625 16.5544L10.6775 13.1615L8.46005 15.3039C8.20997 15.554 8.00156 15.7708 7.54306 15.7708C6.94285 15.7708 7.04289 15.5457 6.84282 14.9788L5.25892 9.81867L0.715654 8.4015C-0.268026 8.10973 -0.276363 7.43449 0.932397 6.94265L18.6553 0.106905C19.4639 -0.251555 20.2392 0.306976 19.9308 1.54908L19.9391 1.55742Z" fill="#070707"/>
               </svg>
               <span
-                className="relative z-10 text-[12px] md:text-[22px] text-[#070707] group-hover:text-white font-bold leading-[100%] uppercase transition-colors duration-300"
+                className="relative z-10 text-[12px] md:text-[22px] text-[#070707] font-bold leading-[100%] uppercase"
                 style={{ fontFamily: 'var(--font-unbounded)' }}
               >
                 <span className="hidden md:inline">{t('rentWithDriverButton')}</span>

@@ -127,15 +127,27 @@ export default function FAQSection() {
                       padding: '1.5px',
                     }}
                   />
+                  {/* Hover border */}
+                  {!isActive && (
+                    <span className="absolute inset-[-1.5px] rounded-[10px] pointer-events-none z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
+                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                        WebkitMaskComposite: 'xor',
+                        maskComposite: 'exclude',
+                        padding: '1.5px',
+                      }}
+                    />
+                  )}
                   <span
-                    className="text-[20px] font-black leading-[120%] text-left text-[#070707] relative z-10"
+                    className={`text-[20px] font-black leading-[120%] text-left relative z-10 transition-colors duration-300 ${isActive ? 'text-[#070707]' : 'text-[#070707] group-hover:text-[#FFAE00]'}`}
                     style={{ fontFamily: 'var(--font-nunito-sans)' }}
                   >
                     {item.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-[15px] transition-transform duration-300 relative z-10 ${isActive ? '-rotate-90' : ''}`}>
+                  <div className={`flex-shrink-0 ml-[15px] transition-all duration-300 relative z-10 ${isActive ? '-rotate-90' : ''}`}>
                     <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16.6091 0H8.59945H1.38693C0.152699 0 -0.464414 1.51783 0.409831 2.40759L7.06952 9.18548C8.13661 10.2715 9.87225 10.2715 10.9393 9.18548L13.4721 6.60778L17.599 2.40759C18.4604 1.51783 17.8433 0 16.6091 0Z" fill="#070707" />
+                      <path d="M16.6091 0H8.59945H1.38693C0.152699 0 -0.464414 1.51783 0.409831 2.40759L7.06952 9.18548C8.13661 10.2715 9.87225 10.2715 10.9393 9.18548L13.4721 6.60778L17.599 2.40759C18.4604 1.51783 17.8433 0 16.6091 0Z" className={`transition-colors duration-300 ${isActive ? 'fill-[#070707]' : 'fill-[#070707] group-hover:fill-[#FFAE00]'}`} />
                     </svg>
                   </div>
                 </button>
@@ -194,15 +206,27 @@ export default function FAQSection() {
                       padding: '1.5px',
                     }}
                   />
+                  {/* Hover border */}
+                  {!isActive && (
+                    <span className="absolute inset-[-1.5px] rounded-[8px] md:rounded-[10px] pointer-events-none z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
+                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                        WebkitMaskComposite: 'xor',
+                        maskComposite: 'exclude',
+                        padding: '1.5px',
+                      }}
+                    />
+                  )}
                   <span
-                    className="text-[16px] md:text-[20px] font-black leading-[120%] text-left text-[#070707] relative z-10"
+                    className={`text-[16px] md:text-[20px] font-black leading-[120%] text-left relative z-10 transition-colors duration-300 ${isActive ? 'text-[#070707]' : 'text-[#070707] group-hover:text-[#FFAE00]'}`}
                     style={{ fontFamily: 'var(--font-nunito-sans)' }}
                   >
                     {item.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-[7px] md:ml-[50px] transition-transform duration-300 relative z-10 ${isActive ? '-rotate-90' : ''}`}>
+                  <div className={`flex-shrink-0 ml-[7px] md:ml-[50px] transition-all duration-300 relative z-10 ${isActive ? '-rotate-90' : ''}`}>
                     <svg className="w-[11px] h-[6px] md:w-[18px] md:h-[10px]" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16.6091 0H8.59945H1.38693C0.152699 0 -0.464414 1.51783 0.409831 2.40759L7.06952 9.18548C8.13661 10.2715 9.87225 10.2715 10.9393 9.18548L13.4721 6.60778L17.599 2.40759C18.4604 1.51783 17.8433 0 16.6091 0Z" fill="#070707" />
+                      <path d="M16.6091 0H8.59945H1.38693C0.152699 0 -0.464414 1.51783 0.409831 2.40759L7.06952 9.18548C8.13661 10.2715 9.87225 10.2715 10.9393 9.18548L13.4721 6.60778L17.599 2.40759C18.4604 1.51783 17.8433 0 16.6091 0Z" className={`transition-colors duration-300 ${isActive ? 'fill-[#070707]' : 'fill-[#070707] group-hover:fill-[#FFAE00]'}`} />
                     </svg>
                   </div>
                 </button>

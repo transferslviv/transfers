@@ -1,9 +1,11 @@
 'use client';
 
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSiteSettings } from '@/contexts/SiteSettingsContext';
 
 export default function HeroSection() {
   const { t } = useLanguage();
+  const { settings } = useSiteSettings();
 
   return (
     <section 
@@ -33,26 +35,23 @@ export default function HeroSection() {
 
       {/* CTA Button */}
       <a
-        href="https://t.me/rentalviv_bot"
+        href={settings.telegramBot}
         target="_blank"
         rel="noopener noreferrer" 
-        className="relative z-10 w-full sm:w-auto flex items-center justify-center gap-[10px] px-[30px] md:px-[50px] py-[15px] md:py-[20px] rounded-[10px] text-[#070707] transition-all duration-300 hover:scale-105 overflow-hidden group bg-transparent sm:bg-transparent sm:hover:bg-[#F3F3F3]"
+        className="relative z-10 w-full sm:w-auto flex items-center justify-center gap-[10px] px-[30px] md:px-[50px] py-[15px] md:py-[20px] rounded-[10px] text-[#070707] transition-all duration-300 hover:scale-105 group"
         style={{
+          background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
           boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
         }}
       >
-        {/* Orange gradient background - always visible on mobile and desktop, hidden on hover for desktop */}
-        <span className="absolute inset-0 rounded-[10px] opacity-100 sm:opacity-100 sm:group-hover:opacity-0 transition-opacity duration-300 z-0"
-          style={{ background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)' }}
-        />
         {/* Gradient border */}
-        <span className="absolute inset-0 rounded-[10px] pointer-events-none z-20"
+        <span className="absolute inset-[-2px] rounded-[12px] pointer-events-none z-20"
           style={{
-            padding: '1.5px',
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0.29), rgba(255,255,255,1))',
+            background: 'linear-gradient(to right, rgba(255,255,255,0.29), rgba(255,255,255,1))',
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
             WebkitMaskComposite: 'xor',
             maskComposite: 'exclude',
+            padding: '2px',
           }}
         />
         <span 
@@ -61,7 +60,6 @@ export default function HeroSection() {
         >
           {t('heroCTA')}
         </span>
-        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out z-10"></span>
       </a>
     </section>
   );

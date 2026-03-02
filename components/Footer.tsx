@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSiteSettings } from '@/contexts/SiteSettingsContext';
 
 export default function Footer() {
   const { t } = useLanguage();
+  const { settings } = useSiteSettings();
   
   return (
     <footer id="contacts" className="bg-[#070707] px-[15px] md:px-[50px] py-[60px] md:py-[100px]">
@@ -51,7 +53,7 @@ export default function Footer() {
                     {t('phoneNumber')}
                   </span>
                   <Link 
-                  href="tel:+380777877087"
+                  href={`tel:${settings.phone}`}
                   className="flex items-center gap-[10px] group transition-colors"
                   >
                     <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
@@ -61,7 +63,7 @@ export default function Footer() {
                       className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%] group-hover:text-[#FFAE00] transition-colors text-nowrap"
                       style={{ fontFamily: 'var(--font-unbounded)' }}
                     >
-                      +380 777 877 087
+                      {settings.phone.replace(/^\+?(\d{2})(\d{3})(\d{3})(\d{3})/, '+$1 $2 $3 $4')}
                     </span>
                   </Link>
                 </div>
@@ -99,8 +101,13 @@ export default function Footer() {
                 >
                   {t('ourAddress')}
                 </span>
-                <div className="flex items-center gap-[10px]">
-                  <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px]">
+                <a 
+                  href={settings.googleMapsLink || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-[10px] group transition-opacity duration-300 hover:opacity-80"
+                >
+                  <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] group-hover:bg-[#2a292a] transition-colors duration-300">
                     <img src="/images/socials/geo.svg" alt="Location" className="w-[18px] h-[18px]" />
                   </div>
                   <span 
@@ -109,7 +116,7 @@ export default function Footer() {
                   >
                     {t('lvivAddress')}
                   </span>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -125,14 +132,14 @@ export default function Footer() {
                 </span>
                 <div className="flex gap-[10px]">
                   <Link 
-                    href="https://instagram.com/rentalviv" 
+                    href={settings.instagram} 
                     target="_blank"
                     className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                   >
                     <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[18px] h-[18px]" />
                   </Link>
                   <Link 
-                    href="https://tiktok.com/@rentalviv" 
+                    href={settings.tiktok} 
                     target="_blank"
                     className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                   >
@@ -151,14 +158,14 @@ export default function Footer() {
                 </span>
                 <div className="flex gap-[10px] items-center">
                   <Link 
-                    href="https://t.me/rentalviv1" 
+                    href={settings.telegramProfile} 
                     target="_blank"
                     className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                   >
                     <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[18px] h-[18px]" />
                   </Link>
                   <Link 
-                    href="https://wa.me/380777877087" 
+                    href={settings.whatsapp} 
                     target="_blank"
                     className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                   >
@@ -200,7 +207,7 @@ export default function Footer() {
                 {t('phoneNumber')}
               </span>
               <Link 
-                href="tel:+380777877087"
+                href={`tel:${settings.phone}`}
                 className="flex items-center gap-[10px]"
               >
                 <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
@@ -210,7 +217,7 @@ export default function Footer() {
                   className="text-white text-[12px] md:text-base font-black leading-[120%]"
                   style={{ fontFamily: 'var(--font-unbounded)' }}
                 >
-                  +380 777 877 087
+                  {settings.phone.replace(/^\+?(\d{2})(\d{3})(\d{3})(\d{3})/, '+$1 $2 $3 $4')}
                 </span>
               </Link>
             </div>
@@ -248,8 +255,13 @@ export default function Footer() {
             >
               {t('ourAddress')}
             </span>
-            <div className="flex items-center gap-[10px]">
-              <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px]">
+            <a 
+              href={settings.googleMapsLink || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-[10px] group transition-opacity duration-300 hover:opacity-80"
+            >
+              <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] group-hover:bg-[#2a292a] transition-colors duration-300">
                 <img src="/images/socials/geo.svg" alt="Location" className="w-[20px] h-[20px]" />
               </div>
               <span 
@@ -258,7 +270,7 @@ export default function Footer() {
               >
                 {t('lvivAddress')}
               </span>
-            </div>
+            </a>
           </div>
 
           {/* Social and Messengers - Row on tablet */}
@@ -273,14 +285,14 @@ export default function Footer() {
               </span>
               <div className="flex gap-[10px]">
                 <Link 
-                  href="https://instagram.com/rentalviv" 
+                  href={settings.instagram} 
                   target="_blank"
                   className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                 >
                   <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[20px] h-[20px]" />
                 </Link>
                 <Link 
-                  href="https://tiktok.com/@rentalviv" 
+                  href={settings.tiktok} 
                   target="_blank"
                   className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                 >
@@ -299,14 +311,14 @@ export default function Footer() {
               </span>
               <div className="flex gap-[10px]">
                 <Link 
-                  href="https://t.me/rentalviv1" 
+                  href={settings.telegramProfile} 
                   target="_blank"
                   className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                 >
                   <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[20px] h-[20px]" />
                 </Link>
                 <Link 
-                  href="https://wa.me/380777877087" 
+                  href={settings.whatsapp} 
                   target="_blank"
                   className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                 >

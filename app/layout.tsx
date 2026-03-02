@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Nunito_Sans, Unbounded } from 'next/font/google';
 import "./globals.css";
-import Header from "@/components/Header";
-import MobileHeader from "@/components/MobileHeader";
+import HeaderWrapper from "@/components/HeaderWrapper";
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -33,13 +33,12 @@ export default function RootLayout({
     <html lang="uk">
       <body className={`${nunitoSans.variable} ${unbounded.variable} antialiased`}>
         <LanguageProvider>
-          <CurrencyProvider>
-            <div className="hidden xl:block">
-              <Header />
-            </div>
-            <MobileHeader />
-            {children}
-          </CurrencyProvider>
+          <SiteSettingsProvider>
+            <CurrencyProvider>
+              <HeaderWrapper />
+              {children}
+            </CurrencyProvider>
+          </SiteSettingsProvider>
         </LanguageProvider>
       </body>
     </html>

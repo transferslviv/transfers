@@ -4,11 +4,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCurrency } from '@/contexts/CurrencyContext';
+import { useSiteSettings } from '@/contexts/SiteSettingsContext';
 import { Currency, currencies as currencySymbols } from '@/lib/currency';
 
 export default function MobileHeader() {
   const { language: currentLanguage, setLanguage, t } = useLanguage();
   const { currency: currentCurrency, setCurrency, currencySymbol } = useCurrency();
+  const { settings } = useSiteSettings();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
@@ -151,7 +153,7 @@ export default function MobileHeader() {
             {isSocialOpen && (
               <div className="absolute top-full right-0 mt-2 bg-[#1a1a1a] rounded-[20px] p-3 shadow-[0_0_50px_rgba(0,0,0,0.8)] z-[60] flex gap-2">
                 <a 
-                  href="https://t.me/rentalviv1" 
+                  href={settings.telegramProfile} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-[35px] h-[35px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-transform"
@@ -160,7 +162,7 @@ export default function MobileHeader() {
                   <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[20px] h-[20px]" />
                 </a>
                 <a 
-                  href="https://wa.me/380777877087" 
+                  href={settings.whatsapp} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-[35px] h-[35px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-transform"
@@ -169,7 +171,7 @@ export default function MobileHeader() {
                   <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[20px] h-[20px]" />
                 </a>
                 <a 
-                  href="https://instagram.com/rentalviv" 
+                  href={settings.instagram} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-[35px] h-[35px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-transform"
@@ -183,20 +185,20 @@ export default function MobileHeader() {
 
           {/* Phone Number - Mobile only */}
           <a 
-            href="tel:+380777877087"
+            href={`tel:${settings.phone}`}
             className="flex md:hidden text-white text-[8px] font-black leading-[120%] hover:text-[#FFAE00] transition-colors"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            0 777 877 087
+            {settings.phone.replace(/^\+?380/, '').replace(/(\d{3})(\d{3})(\d{3})/, '0 $1 $2 $3')}
           </a>
 
           {/* Phone Number - Tablet only */}
           <a 
-            href="tel:+380777877087"
+            href={`tel:${settings.phone}`}
             className="hidden md:block text-white text-[16px] font-black leading-[120%] hover:text-[#FFAE00] transition-colors"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            0 777 877 087
+            {settings.phone.replace(/^\+?380/, '').replace(/(\d{3})(\d{3})(\d{3})/, '0 $1 $2 $3')}
           </a>
         </div>
       </header>
@@ -306,7 +308,7 @@ export default function MobileHeader() {
             {/* Social Icons */}
             <div className="flex items-center gap-[10px] mb-[30px]">
               <a 
-                href="https://t.me/rentalviv1" 
+                href={settings.telegramProfile} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
@@ -315,7 +317,7 @@ export default function MobileHeader() {
                 <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[15px] h-[15px]" />
               </a>
               <a 
-                href="https://wa.me/380777877087" 
+                href={settings.whatsapp} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
@@ -324,7 +326,7 @@ export default function MobileHeader() {
                 <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[15px] h-[15px]" />
               </a>
               <a 
-                href="https://instagram.com/rentalviv" 
+                href={settings.instagram} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"

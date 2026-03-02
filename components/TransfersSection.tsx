@@ -131,7 +131,7 @@ export default function TransfersSection() {
           transfers={ukraineTransfers}
           description={
             <>
-              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
+              <p className="font-black uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
                 {t('transferUkraineSubtitle')}
               </p>
               <p className="mb-[16px]">
@@ -153,7 +153,7 @@ export default function TransfersSection() {
           transfers={europeTransfers}
           description={
             <>
-              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
+              <p className="font-black uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
                 {t('transferEuropeSubtitle')}
               </p>
               <p className="mb-[16px]">
@@ -173,7 +173,7 @@ export default function TransfersSection() {
           darkButton={true}
           description={
             <>
-              <p className="font-bold uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
+              <p className="font-black uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
                 {t('transferLvivSubtitle')}
               </p>
               <p>

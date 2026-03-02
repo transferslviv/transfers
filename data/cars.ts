@@ -8,6 +8,8 @@ export interface Car {
   luggage: number;
   child: boolean;
   pet: boolean;
+  showPassengers?: boolean;
+  showLuggage?: boolean;
 }
 
 export const carsData: Car[] = [

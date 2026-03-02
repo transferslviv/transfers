@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCurrency } from '@/contexts/CurrencyContext';
+import { useSiteSettings } from '@/contexts/SiteSettingsContext';
 import { Currency, currencies as currencySymbols } from '@/lib/currency';
 
 export default function Header() {
   const { language: currentLanguage, setLanguage, t } = useLanguage();
   const { currency: currentCurrency, setCurrency, currencySymbol } = useCurrency();
+  const { settings } = useSiteSettings();
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
@@ -130,7 +132,7 @@ export default function Header() {
           <div className="flex items-center gap-[5px] ">
             {/* Telegram */}
             <a 
-              href="https://t.me/rentalviv1" 
+              href={settings.telegramProfile} 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-[35px] h-[35px] flex items-center justify-center transition-all hover:scale-110 hover:bg-[#FFAE00] bg-[#1E1D1E] p-2 rounded-[10px]"
@@ -141,7 +143,7 @@ export default function Header() {
 
             {/* WhatsApp */}
             <a 
-              href="https://wa.me/380777877087" 
+              href={settings.whatsapp} 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-[35px] h-[35px] flex items-center justify-center transition-all hover:scale-110 hover:bg-[#FFAE00] bg-[#1E1D1E] p-2 rounded-[10px]"
@@ -152,7 +154,7 @@ export default function Header() {
 
             {/* Instagram */}
             <a 
-              href="https://instagram.com/rentalviv" 
+              href={settings.instagram} 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-[35px] h-[35px] flex items-center justify-center transition-all hover:scale-110 hover:bg-[#FFAE00] bg-[#1E1D1E] rounded-[10px] p-2"
@@ -164,11 +166,11 @@ export default function Header() {
 
           {/* Phone Number */}
           <a 
-            href="tel:+380777877087"
+            href={`tel:${settings.phone}`}
             className="text-white text-[16px] font-black leading-[120%] hover:text-[#FFAE00] transition-colors"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            0 777 877 087
+            {settings.phone.replace(/^\+?380/, '').replace(/(\d{3})(\d{3})(\d{3})/, '0 $1 $2 $3')}
           </a>
         </div>
       </div>

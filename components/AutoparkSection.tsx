@@ -2,11 +2,50 @@
 
 import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import CarCard from './CarCard';
-import { carsData } from '@/data/cars';
+import { Car } from '@/data/cars';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSiteSettings } from '@/contexts/SiteSettingsContext';
 
 export default function AutoparkSection() {
   const { t } = useLanguage();
+  const { settings } = useSiteSettings();
+  const [carsData, setCarsData] = useState<Car[]>([]);
+  const [carsLoading, setCarsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchCars() {
+      try {
+        const res = await fetch('/api/admin/cars');
+        const data = await res.json();
+        if (data.success && data.cars.length > 0) {
+          setCarsData(data.cars.filter((c: any) => c.isActive).map((c: any, i: number) => ({
+            id: i + 1,
+            name: c.name,
+            description: c.description,
+            images: c.images,
+            mainImage: c.mainImage,
+            passengers: c.passengers,
+            luggage: c.luggage,
+            child: c.child,
+            pet: c.pet,
+            showPassengers: c.showPassengers !== false,
+            showLuggage: c.showLuggage !== false,
+          })));
+        } else {
+          // Fallback to static data
+          const { carsData: staticCars } = await import('@/data/cars');
+          setCarsData(staticCars);
+        }
+      } catch {
+        const { carsData: staticCars } = await import('@/data/cars');
+        setCarsData(staticCars);
+      } finally {
+        setCarsLoading(false);
+      }
+    }
+    fetchCars();
+  }, []);
+
   // Duplicate cards if fewer than 3 so the slider works properly
   const displayCars = useMemo(() => {
     if (carsData.length === 0) return [];
@@ -15,7 +54,7 @@ export default function AutoparkSection() {
       cars = [...cars, ...carsData.map((c, i) => ({ ...c, id: c.id + 1000 * (Math.floor(cars.length / carsData.length) + 1) + i }))];
     }
     return cars;
-  }, []);
+  }, [carsData]);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -89,7 +128,7 @@ export default function AutoparkSection() {
             {t('autoparkSectionTitle')}
           </h2>
           <a
-            href="https://t.me/rentalviv_bot"
+            href={settings.telegramBot}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center px-[50px] py-[20px] bg-transparent border-2 border-[#070707] hover:border-white rounded-[10px] transition-all"
@@ -153,7 +192,7 @@ export default function AutoparkSection() {
 
         {/* Button - Mobile/Tablet only */}
         <a
-          href="https://t.me/rentalviv_bot"
+          href={settings.telegramBot}
           target="_blank"
           rel="noopener noreferrer"
           className="xl:hidden group flex items-center justify-center w-full md:w-auto px-[20px] md:px-[50px] py-[14px] md:py-[20px] bg-transparent border-2 border-[#070707] hover:border-white rounded-[8px] md:rounded-[10px] transition-all"
