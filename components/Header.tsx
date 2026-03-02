@@ -69,7 +69,7 @@ export default function Header() {
 
         {/* Center - Logo */}
         <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center top-0 group">
-          <svg className="absolute top-10 left-1/2 -translate-x-1/2 w-[280px] xl:w-[340px] 2xl:w-[400px] h-auto" viewBox="0 0 242 39" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 40px rgba(0,0,0,0.8))' }}>
+          <svg className="absolute top-9 left-1/2 -translate-x-1/2 w-[280px] xl:w-[340px] 2xl:w-[400px] h-auto" viewBox="0 0 242 39" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 40px rgba(0,0,0,0.8))' }}>
             <path d="M241.965 19.2554C241.965 19.2554 187.799 38.5107 120.982 38.5107C54.1657 38.5107 0 19.2554 0 19.2554C0 19.2554 54.1657 0 120.982 0C187.799 0 241.965 19.2554 241.965 19.2554Z" fill="#070707" />
           </svg>
          <img 
