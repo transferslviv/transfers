@@ -71,11 +71,7 @@ export default function OtherServicesSection() {
               href={settings.telegramBot}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[10px] transition-all hover:scale-105"
-              style={{
-                background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
-                boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
-              }}
+              className="btn-services-cta group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[10px] transition-all hover:scale-105"
             >
               {/* Gradient border */}
               <span className="absolute inset-[-2px] rounded-[12px] pointer-events-none z-20"
@@ -145,11 +141,7 @@ export default function OtherServicesSection() {
               href={settings.telegramBot}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[10px] transition-all hover:scale-105"
-              style={{
-                background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
-                boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
-              }}
+              className="btn-services-cta group relative w-full flex items-center justify-center gap-[10px] md:gap-[14px] px-[20px] md:px-[50px] py-[14px] md:py-[20px] rounded-[10px] transition-all hover:scale-105"
             >
               {/* Gradient border */}
               <span className="absolute inset-[-2px] rounded-[12px] pointer-events-none z-20"

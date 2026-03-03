@@ -13,6 +13,7 @@ export default function AdminDashboard() {
 
   const menuItems = [
     { label: 'Автопарк', icon: '🚗', href: '/admin/cars' },
+    { label: 'Напрямки', icon: '🗺️', href: '/admin/directions' },
     { label: 'Налаштування', icon: '⚙️', href: '/admin/settings' },
     { label: 'Адміни', icon: '👥', href: '/admin/admins' },
     { label: 'Логи', icon: '📊', href: '/admin/logs' },
@@ -20,6 +21,7 @@ export default function AdminDashboard() {
 
   const cards = [
     { label: 'Автопарк', icon: '🚗', href: '/admin/cars', desc: 'Додавання, редагування та видалення автомобілів' },
+    { label: 'Напрямки', icon: '🗺️', href: '/admin/directions', desc: 'Редагування контенту сторінок напрямків' },
     { label: 'Налаштування', icon: '⚙️', href: '/admin/settings', desc: 'Телефон, соціальні мережі, месенджери, адреса' },
     { label: 'Адміністратори', icon: '👥', href: '/admin/admins', desc: 'Управління адміністраторами системи' },
     { label: 'Логи', icon: '📊', href: '/admin/logs', desc: 'Журнал дій адміністраторів' },
@@ -88,7 +90,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {cards.map((card) => (
             <button
               key={card.href}

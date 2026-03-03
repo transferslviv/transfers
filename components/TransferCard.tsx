@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Transfer } from '@/data/transfers';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -59,15 +60,16 @@ export default function TransferCard({ transfer, darkButton = false }: TransferC
       </p>
 
       {/* Button */}
-      <button
-        className="w-full py-[12px] px-[15px] md:py-[15px] md:px-[30px] rounded-[8px] md:rounded-[10px] text-[10px] md:text-[12px] font-bold text-center uppercase leading-[100%] transition-all bg-[#070707] text-[#F3F3F3] hover:bg-[#F3F3F3] hover:text-[#070707] cursor-pointer"
+      <Link
+        href={`/direction/${transfer.id}`}
+        className="w-full py-[12px] px-[15px] md:py-[15px] md:px-[30px] rounded-[8px] md:rounded-[10px] text-[10px] md:text-[12px] font-bold text-center uppercase leading-[100%] transition-all bg-[#070707] text-[#F3F3F3] hover:bg-[#F3F3F3] hover:text-[#070707] cursor-pointer block"
         style={{
           fontFamily: 'var(--font-unbounded)',
           boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
         }}
       >
         {buttonText}
-      </button>
+      </Link>
     </div>
   );
 }

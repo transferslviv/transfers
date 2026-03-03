@@ -38,11 +38,7 @@ export default function HeroSection() {
         href={settings.telegramBot}
         target="_blank"
         rel="noopener noreferrer" 
-        className="relative z-10 w-full sm:w-auto flex items-center justify-center gap-[10px] px-[30px] md:px-[50px] py-[15px] md:py-[20px] rounded-[10px] text-[#070707] transition-all duration-300 hover:scale-105 group"
-        style={{
-          background: 'linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%)',
-          boxShadow: '0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3)'
-        }}
+        className="btn-hero-cta relative z-10 w-full sm:w-auto flex items-center justify-center gap-[10px] px-[30px] md:px-[50px] py-[15px] md:py-[20px] rounded-[10px] text-[#070707] transition-all duration-300 hover:scale-105 group"
       >
         {/* Gradient border */}
         <span className="absolute inset-[-2px] rounded-[12px] pointer-events-none z-20"

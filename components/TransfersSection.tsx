@@ -119,7 +119,45 @@ function TransferSlider({ title, transfers, description, darkButton = false }: T
 }
 
 export default function TransfersSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [customTransfers, setCustomTransfers] = useState<{ ukraine: Transfer[]; europe: Transfer[]; lviv: Transfer[] }>({
+    ukraine: [], europe: [], lviv: [],
+  });
+
+  // Fetch custom directions from DB and convert to Transfer format
+  useEffect(() => {
+    async function fetchCustom() {
+      try {
+        const res = await fetch('/api/admin/directions');
+        const data = await res.json();
+        if (data.success) {
+          const staticIds = new Set([...ukraineTransfers, ...europeTransfers, ...lvivTransfers].map(t => t.id));
+          const custom: { ukraine: Transfer[]; europe: Transfer[]; lviv: Transfer[] } = {
+            ukraine: [], europe: [], lviv: [],
+          };
+          for (const page of data.pages) {
+            if (!page.isCustom || staticIds.has(page.directionId) || !page.isActive) continue;
+            if (!page.cardTitle && !page.cardImage) continue; // skip if no card data
+            const t: Transfer = {
+              id: page.directionId,
+              title: page.cardTitle || page.heroTitle || '',
+              titleEn: page.cardTitleEn || page.heroTitleEn || '',
+              image: page.cardImage || '/images/direction/bg-lviv.png',
+              image2: page.cardImage2 || undefined,
+              buttonText: page.cardButtonText || 'дізнатися більше',
+              buttonTextEn: page.cardButtonTextEn || 'learn more',
+            };
+            const cat = page.category || 'ukraine';
+            if (cat === 'ukraine') custom.ukraine.push(t);
+            else if (cat === 'europe') custom.europe.push(t);
+            else custom.lviv.push(t);
+          }
+          setCustomTransfers(custom);
+        }
+      } catch {}
+    }
+    fetchCustom();
+  }, []);
 
   return (
     <section id="services" className="w-full bg-[#1E1D1E] px-[15px] md:px-[50px] py-[60px] md:py-[150px]">
@@ -128,7 +166,7 @@ export default function TransfersSection() {
         {/* Group 1: Ukraine Transfers */}
         <TransferSlider
           title={t('transferUkraineTitle')}
-          transfers={ukraineTransfers}
+          transfers={[...ukraineTransfers, ...customTransfers.ukraine]}
           description={
             <>
               <p className="font-black uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
@@ -150,7 +188,7 @@ export default function TransfersSection() {
         {/* Group 2: Europe Transfers */}
         <TransferSlider
           title={t('transferEuropeTitle')}
-          transfers={europeTransfers}
+          transfers={[...europeTransfers, ...customTransfers.europe]}
           description={
             <>
               <p className="font-black uppercase text-[12px] md:text-[18px] mb-[16px]" style={{ fontFamily: 'var(--font-nunito-sans)' }}>
@@ -169,7 +207,7 @@ export default function TransfersSection() {
         {/* Group 3: Lviv Transfers */}
         <TransferSlider
           title={t('transferLvivTitle')}
-          transfers={lvivTransfers}
+          transfers={[...lvivTransfers, ...customTransfers.lviv]}
           darkButton={true}
           description={
             <>

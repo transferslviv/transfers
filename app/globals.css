@@ -28,6 +28,62 @@ html {
   scroll-padding-top: 80px; /* Offset для фіксованого хедера */
 }
 
+/* Hero CTA button: orange → white on hover */
+.btn-hero-cta {
+  background: linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%);
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-hero-cta:hover {
+  background: #F4F4F4 !important;
+}
+
+/* Services CTA button: orange → black on hover */
+.btn-services-cta {
+  background: linear-gradient(to bottom left, #FFAE00 23%, #F39E00 100%);
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-services-cta:hover {
+  background: #070707 !important;
+}
+.btn-services-cta:hover span {
+  color: #F4F4F4 !important;
+}
+.btn-services-cta:hover svg path {
+  fill: #F4F4F4 !important;
+}
+
+/* Direction info content rendered from TipTap HTML */
+.direction-info-content p {
+  margin-bottom: 16px;
+}
+.direction-info-content p:last-child {
+  margin-bottom: 0;
+}
+.direction-info-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.direction-info-content ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.direction-info-content li {
+  margin-bottom: 4px;
+}
+.direction-info-content li p {
+  margin-bottom: 0;
+}
+.direction-info-content strong {
+  font-weight: 700;
+}
+.direction-info-content em {
+  font-style: italic;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
