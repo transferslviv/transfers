@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSiteSettings } from '@/contexts/SiteSettingsContext';
@@ -17,7 +18,7 @@ export default function Footer() {
           {/* Column 1 - Logo and Description */}
           <div className="flex flex-col gap-5">
             <Link href="/" className="group">
-              <img src="/images/logo.svg" alt="TransferLviv" className="w-[200px] xl:w-[240px] 2xl:w-[273px] h-auto group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[5000%] group-hover:hue-rotate-[-10deg] transition-all" />
+              <Image src="/images/logo.svg" alt="TransferLviv" width={273} height={50} loading="lazy" className="w-[200px] xl:w-[240px] 2xl:w-[273px] h-auto group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[5000%] group-hover:hue-rotate-[-10deg] transition-all" />
             </Link>
             <div className="flex flex-col gap-[10px]">
               <p 
@@ -57,7 +58,7 @@ export default function Footer() {
                   className="flex items-center gap-[10px] group transition-colors"
                   >
                     <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
-                      <img src="/images/socials/phone.svg" alt="Phone" className="w-[18px] h-[18px]" />
+                      <Image src="/images/socials/phone.svg" alt="Phone" width={18} height={18} loading="lazy" />
                     </div>
                     <span 
                       className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%] group-hover:text-[#FFAE00] transition-colors text-nowrap"
@@ -81,7 +82,7 @@ export default function Footer() {
                   className="flex items-center gap-[10px] group transition-colors"
                   >
                     <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
-                      <img src="/images/socials/mail.svg" alt="Email" className="w-[18px] h-[18px]" />
+                      <Image src="/images/socials/mail.svg" alt="Email" width={18} height={18} loading="lazy" />
                     </div>
                     <span 
                       className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%] group-hover:text-[#FFAE00] transition-colors"
@@ -108,7 +109,7 @@ export default function Footer() {
                   className="flex items-center gap-[10px] group transition-opacity duration-300 hover:opacity-80"
                 >
                   <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] group-hover:bg-[#2a292a] transition-colors duration-300">
-                    <img src="/images/socials/geo.svg" alt="Location" className="w-[18px] h-[18px]" />
+                    <Image src="/images/socials/geo.svg" alt="Location" width={18} height={18} loading="lazy" />
                   </div>
                   <span 
                     className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%]"
@@ -136,14 +137,14 @@ export default function Footer() {
                     target="_blank"
                     className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                   >
-                    <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[18px] h-[18px]" />
+                    <Image src="/images/socials/insta-icon.svg" alt="Instagram" width={18} height={18} loading="lazy" />
                   </Link>
                   <Link 
                     href={settings.tiktok} 
                     target="_blank"
                     className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                   >
-                    <img src="/images/socials/tik-tok.svg" alt="TikTok" className="w-[18px] h-[18px]" />
+                    <Image src="/images/socials/tik-tok.svg" alt="TikTok" width={18} height={18} loading="lazy" />
                   </Link>
                 </div>
               </div>
@@ -162,14 +163,14 @@ export default function Footer() {
                     target="_blank"
                     className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                   >
-                    <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[18px] h-[18px]" />
+                    <Image src="/images/socials/tg-icon.svg" alt="Telegram" width={18} height={18} loading="lazy" />
                   </Link>
                   <Link 
                     href={settings.whatsapp} 
                     target="_blank"
                     className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                   >
-                    <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[18px] h-[18px]" />
+                    <Image src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" width={18} height={18} loading="lazy" />
                   </Link>
                 </div>
               </div>
@@ -180,7 +181,7 @@ export default function Footer() {
         {/* Logo and Description - at top on mobile/tablet */}
         <div className="xl:hidden flex flex-col md:flex-row md:items-center gap-[15px] md:gap-[50px]">
           {/* Логотип */}
-          <img src="/images/logo.svg" alt="TransferLviv" className="w-[205px] md:w-[309px] h-auto" />
+          <Image src="/images/logo.svg" alt="TransferLviv" width={309} height={50} loading="lazy" className="w-[205px] md:w-[309px] h-auto" />
           
           {/* Текст */}
           <p 
@@ -211,7 +212,7 @@ export default function Footer() {
                 className="flex items-center gap-[10px]"
               >
                 <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
-                  <img src="/images/socials/phone.svg" alt="Phone" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/phone.svg" alt="Phone" width={20} height={20} loading="lazy" />
                 </div>
                 <span 
                   className="text-white text-[12px] md:text-base font-black leading-[120%]"
@@ -235,7 +236,7 @@ export default function Footer() {
                 className="flex items-center gap-[10px]"
               >
                 <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
-                  <img src="/images/socials/mail.svg" alt="Email" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/mail.svg" alt="Email" width={20} height={20} loading="lazy" />
                 </div>
                 <span 
                   className="text-white text-[12px] md:text-base font-black leading-[120%]"
@@ -262,7 +263,7 @@ export default function Footer() {
               className="flex items-center gap-[10px] group transition-opacity duration-300 hover:opacity-80"
             >
               <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] group-hover:bg-[#2a292a] transition-colors duration-300">
-                <img src="/images/socials/geo.svg" alt="Location" className="w-[20px] h-[20px]" />
+                <Image src="/images/socials/geo.svg" alt="Location" width={20} height={20} loading="lazy" />
               </div>
               <span 
                 className="text-white text-[12px] md:text-base font-black leading-[120%]"
@@ -289,14 +290,14 @@ export default function Footer() {
                   target="_blank"
                   className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                 >
-                  <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/insta-icon.svg" alt="Instagram" width={20} height={20} loading="lazy" />
                 </Link>
                 <Link 
                   href={settings.tiktok} 
                   target="_blank"
                   className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                 >
-                  <img src="/images/socials/tik-tok.svg" alt="TikTok" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/tik-tok.svg" alt="TikTok" width={20} height={20} loading="lazy" />
                 </Link>
               </div>
             </div>
@@ -315,14 +316,14 @@ export default function Footer() {
                   target="_blank"
                   className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                 >
-                  <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/tg-icon.svg" alt="Telegram" width={20} height={20} loading="lazy" />
                 </Link>
                 <Link 
                   href={settings.whatsapp} 
                   target="_blank"
                   className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all"
                 >
-                  <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} loading="lazy" />
                 </Link>
               </div>
             </div>

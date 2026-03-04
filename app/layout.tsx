@@ -5,17 +5,19 @@ import HeaderWrapper from "@/components/HeaderWrapper";
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SiteSettingsProvider } from "@/contexts/SiteSettingsContext";
+import { getSettings } from "@/lib/getSettings";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
   subsets: ["latin", "cyrillic"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700", "900"],
 });
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
   subsets: ["latin", "cyrillic"],
+  display: "swap",
   weight: ["300", "400", "700", "800", "900"],
 });
 
@@ -24,16 +26,18 @@ export const metadata: Metadata = {
   description: "Трансфер та оренда автомобілів у Львові. Комфортний сервіс, сучасні авто, професійні водії.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const settings = await getSettings();
+
   return (
     <html lang="uk">
       <body className={`${nunitoSans.variable} ${unbounded.variable} antialiased`}>
         <LanguageProvider>
-          <SiteSettingsProvider>
+          <SiteSettingsProvider initialSettings={settings}>
             <CurrencyProvider>
               <HeaderWrapper />
               {children}

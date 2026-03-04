@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCurrency } from '@/contexts/CurrencyContext';
 import { useSiteSettings } from '@/contexts/SiteSettingsContext';
@@ -101,18 +102,21 @@ export default function MobileHeader() {
             <path d="M241.965 19.2554C241.965 19.2554 187.799 38.5107 120.982 38.5107C54.1657 38.5107 0 19.2554 0 19.2554C0 19.2554 54.1657 0 120.982 0C187.799 0 241.965 19.2554 241.965 19.2554Z" fill="#070707" />
           </svg>
           <Link href="/">
-            <img 
+            <Image 
               src="/images/logo.svg" 
               alt="TransferLviv" 
-              className="relative z-10 h-[25px] md:h-[45px] transition-all duration-300 mt-[14px] md:mt-[16px]"
+              width={100}
+              height={25}
+              priority
+              className="relative z-10 h-[25px] md:h-[45px] w-auto transition-all duration-300 mt-[14px] md:mt-[16px]"
               style={{
                 filter: 'brightness(1)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.filter = 'brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1000%) hue-rotate(5deg) brightness(105%) contrast(106%)';
+                (e.currentTarget as HTMLElement).style.filter = 'brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1000%) hue-rotate(5deg) brightness(105%) contrast(106%)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.filter = 'brightness(1)';
+                (e.currentTarget as HTMLElement).style.filter = 'brightness(1)';
               }}
               onTouchStart={(e) => {
                 const target = e.currentTarget;
@@ -139,7 +143,7 @@ export default function MobileHeader() {
               aria-label="Відкрити меню соціальних мереж"
               aria-expanded={isSocialOpen}
             >
-              <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[20px] h-[20px]" />
+              <Image src="/images/socials/tg-icon.svg" alt="Telegram" width={20} height={20} />
             </button>
             <button onClick={() => {
               setIsSocialOpen(!isSocialOpen);
@@ -159,7 +163,7 @@ export default function MobileHeader() {
                   className="w-[35px] h-[35px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-transform"
                   aria-label="Telegram - зв'язатись з нами"
                 >
-                  <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/tg-icon.svg" alt="Telegram" width={20} height={20} />
                 </a>
                 <a 
                   href={settings.whatsapp} 
@@ -168,7 +172,7 @@ export default function MobileHeader() {
                   className="w-[35px] h-[35px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-transform"
                   aria-label="WhatsApp - зв'язатись з нами"
                 >
-                  <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} />
                 </a>
                 <a 
                   href={settings.instagram} 
@@ -177,7 +181,7 @@ export default function MobileHeader() {
                   className="w-[35px] h-[35px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-transform"
                   aria-label="Instagram - наш профіль"
                 >
-                  <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[20px] h-[20px]" />
+                  <Image src="/images/socials/insta-icon.svg" alt="Instagram" width={20} height={20} />
                 </a>
               </div>
             )}
@@ -314,7 +318,7 @@ export default function MobileHeader() {
                 className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
                 aria-label="Telegram"
               >
-                <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[15px] h-[15px]" />
+                <Image src="/images/socials/tg-icon.svg" alt="Telegram" width={15} height={15} />
               </a>
               <a 
                 href={settings.whatsapp} 
@@ -323,7 +327,7 @@ export default function MobileHeader() {
                 className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
                 aria-label="WhatsApp"
               >
-                <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[15px] h-[15px]" />
+                <Image src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" width={15} height={15} />
               </a>
               <a 
                 href={settings.instagram} 
@@ -332,7 +336,7 @@ export default function MobileHeader() {
                 className="w-[30px] h-[30px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 transition-transform"
                 aria-label="Instagram"
               >
-                <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[15px] h-[15px]" />
+                <Image src="/images/socials/insta-icon.svg" alt="Instagram" width={15} height={15} />
               </a>
             </div>
 

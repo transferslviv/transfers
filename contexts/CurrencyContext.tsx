@@ -25,19 +25,19 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('currency', 'EUR');
     }
 
-    // Завантажуємо актуальні курси валют
-    fetchExchangeRates().catch(err => {
-      console.error('Failed to load exchange rates:', err);
-    });
+    // Завантажуємо актуальні курси валют у фоні (не блокує рендеринг)
+    const controller = new AbortController();
+    fetchExchangeRates().catch(() => {});
 
     // Оновлюємо курси кожну годину
     const interval = setInterval(() => {
-      fetchExchangeRates().catch(err => {
-        console.error('Failed to refresh exchange rates:', err);
-      });
-    }, 60 * 60 * 1000); // 1 година
+      fetchExchangeRates().catch(() => {});
+    }, 60 * 60 * 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      controller.abort();
+    };
   }, []);
 
   const setCurrency = (curr: Currency) => {

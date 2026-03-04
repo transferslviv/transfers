@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext } from 'react';
 
 export interface SiteSettings {
   phone: string;
@@ -34,26 +34,12 @@ const SiteSettingsContext = createContext<SiteSettingsContextType>({
   loading: true,
 });
 
-export function SiteSettingsProvider({ children }: { children: React.ReactNode }) {
-  const [settings, setSettings] = useState<SiteSettings>(DEFAULT_SETTINGS);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/api/admin/settings')
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success && data.data) {
-          setSettings(data.data);
-        }
-      })
-      .catch(() => {
-        // Use defaults on error
-      })
-      .finally(() => setLoading(false));
-  }, []);
+export function SiteSettingsProvider({ children, initialSettings }: { children: React.ReactNode; initialSettings?: SiteSettings }) {
+  // Use server-fetched settings directly — no client-side fetch needed
+  const settings = initialSettings || DEFAULT_SETTINGS;
 
   return (
-    <SiteSettingsContext.Provider value={{ settings, loading }}>
+    <SiteSettingsContext.Provider value={{ settings, loading: false }}>
       {children}
     </SiteSettingsContext.Provider>
   );

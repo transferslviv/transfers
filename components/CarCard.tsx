@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Car } from '@/data/cars';
 
 interface CarCardProps {
@@ -61,10 +62,13 @@ export default function CarCard({ car }: CarCardProps) {
       {/* Gallery - Desktop/Tablet: main image + 5 thumbnails (no scroll) */}
       <div className="hidden md:flex relative w-full h-[340px] gap-[10px]">
         <div className="relative flex-1 min-w-0 h-full rounded-[10px] overflow-hidden bg-gray-200">
-          <img 
+          <Image 
             src={car.images[currentImageIndex]} 
             alt={car.name}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="lazy"
+            className="object-cover"
           />
           {renderNavDots('gap-[17px]')}
         </div>
@@ -77,12 +81,15 @@ export default function CarCard({ car }: CarCardProps) {
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className="flex-1 min-h-0 rounded-[10px] md:rounded-[8px] overflow-hidden border-2 border-transparent hover:border-[#070707] transition-all"
+                className="flex-1 min-h-0 rounded-[10px] md:rounded-[8px] overflow-hidden border-2 border-transparent hover:border-[#070707] transition-all relative"
               >
-                <img 
+                <Image 
                   src={image} 
                   alt={`${car.name} ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="60px"
+                  loading="lazy"
+                  className="object-cover"
                 />
               </button>
             ))}
@@ -92,10 +99,13 @@ export default function CarCard({ car }: CarCardProps) {
       {/* Gallery - Mobile: main image + thumbnail row (no duplicates) */}
       <div className="flex md:hidden flex-col gap-[10px]">
         <div className="relative w-full aspect-[216/169] rounded-[8px] overflow-hidden bg-gray-200">
-          <img 
+          <Image 
             src={car.images[currentImageIndex]} 
             alt={car.name}
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            loading="lazy"
+            className="object-cover"
           />
           {renderNavDots('gap-[12px]')}
         </div>
@@ -108,12 +118,15 @@ export default function CarCard({ car }: CarCardProps) {
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className="flex-1 aspect-square rounded-[10px] md:rounded-[8px] overflow-hidden border-2 border-transparent transition-all"
+                className="flex-1 aspect-square rounded-[10px] md:rounded-[8px] overflow-hidden border-2 border-transparent transition-all relative"
               >
-                <img 
+                <Image 
                   src={image} 
                   alt={`${car.name} ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="20vw"
+                  loading="lazy"
+                  className="object-cover"
                 />
               </button>
             ))}
@@ -141,22 +154,22 @@ export default function CarCard({ car }: CarCardProps) {
         <div className="flex items-center gap-[10px] md:gap-[15px] flex-shrink-0">
           {(car.showPassengers !== false) && (
             <div className="relative flex items-center justify-center">
-              <img src="/images/cars/people.svg" alt="Пасажири" className="w-[40px] h-[40px]" />
+              <Image src="/images/cars/people.svg" alt="Пасажири" width={40} height={40} loading="lazy" />
             </div>
           )}
           {(car.showLuggage !== false) && (
             <div className="relative flex items-center justify-center">
-              <img src="/images/cars/bag.svg" alt="Багаж" className="w-[40px] h-[40px]" />
+              <Image src="/images/cars/bag.svg" alt="Багаж" width={40} height={40} loading="lazy" />
             </div>
           )}
           {car.child && (
             <div className="flex items-center justify-center">
-              <img src="/images/cars/child.svg" alt="Дитяче крісло" className="w-[40px] h-[40px]" />
+              <Image src="/images/cars/child.svg" alt="Дитяче крісло" width={40} height={40} loading="lazy" />
             </div>
           )}
           {car.pet && (
             <div className="flex items-center justify-center">
-              <img src="/images/cars/pet.svg" alt="Тварини" className="w-[40px] h-[40px]" />
+              <Image src="/images/cars/pet.svg" alt="Тварини" width={40} height={40} loading="lazy" />
             </div>
           )}
         </div>

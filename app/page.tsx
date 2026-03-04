@@ -1,10 +1,12 @@
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import AutoparkSection from '@/components/AutoparkSection';
-import TransfersSection from '@/components/TransfersSection';
-import FAQSection from '@/components/FAQSection';
-import OtherServicesSection from '@/components/OtherServicesSection';
-import Footer from '@/components/Footer';
+
+const AutoparkSection = dynamic(() => import('@/components/AutoparkSection'));
+const TransfersSection = dynamic(() => import('@/components/TransfersSection'));
+const FAQSection = dynamic(() => import('@/components/FAQSection'));
+const OtherServicesSection = dynamic(() => import('@/components/OtherServicesSection'));
+const Footer = dynamic(() => import('@/components/Footer'));
 
 export default function Home() {
   return (

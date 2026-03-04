@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSiteSettings } from '@/contexts/SiteSettingsContext';
@@ -27,11 +28,14 @@ export default function OtherServicesSection() {
           }}
         >
           {/* Image */}
-          <div className="w-full xl:w-1/2 h-[166px] md:h-[366px]">
-            <img 
+          <div className="w-full xl:w-1/2 h-[166px] md:h-[366px] relative">
+            <Image 
               src="/images/services/rent-no-driver.webp" 
               alt={t('rentNoDriverTitle')} 
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1280px) 100vw, 50vw"
+              loading="lazy"
+              className="object-cover"
             />
           </div>
 
@@ -168,11 +172,14 @@ export default function OtherServicesSection() {
           </div>
 
           {/* Image */}
-          <div className="w-full xl:w-1/2 h-[166px] md:h-[366px]">
-            <img 
+          <div className="w-full xl:w-1/2 h-[166px] md:h-[366px] relative">
+            <Image 
               src="/images/services/rent-with-driver.webp" 
               alt={t('rentWithDriverTitle')} 
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1280px) 100vw, 50vw"
+              loading="lazy"
+              className="object-cover"
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AboutSection() {
@@ -19,9 +20,12 @@ export default function AboutSection() {
 
         {/* Map Image */}
         <div className="order-2 xl:order-1 w-full xl:w-[685px]">
-          <img 
+          <Image 
             src="/images/map.webp" 
             alt="Карта України - TransferLviv" 
+            width={685}
+            height={685}
+            loading="lazy"
             className="w-full h-auto object-contain"
           />
         </div>

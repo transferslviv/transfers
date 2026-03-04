@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSiteSettings } from '@/contexts/SiteSettingsContext';
 
@@ -9,8 +10,33 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="relative w-full h-[500px] md:h-[calc(100vh-70px)] flex flex-col justify-between items-center px-[15px] md:px-[50px] py-[50px] md:py-[120px] xl:py-[100px] bg-[url('/images/hero-bg.webp')] md:bg-[url('/images/hero-bg-tablet.webp')] xl:bg-[url('/images/hero-bg.webp')] bg-cover bg-center bg-no-repeat"
+      className="relative w-full h-[500px] md:h-[calc(100vh-70px)] flex flex-col justify-between items-center px-[15px] md:px-[50px] py-[50px] md:py-[120px] xl:py-[100px] overflow-hidden"
     >
+      {/* Background image - optimized with next/image for LCP */}
+      <Image
+        src="/images/hero-bg.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center hidden xl:block"
+      />
+      <Image
+        src="/images/hero-bg-tablet.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center hidden md:block xl:hidden"
+      />
+      <Image
+        src="/images/hero-bg.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center md:hidden"
+      />
      
       {/* Title Section */}
       <div className="relative z-10 flex flex-col items-center justify-center gap-[10px] md:gap-[20px] w-full max-w-[1425px]">

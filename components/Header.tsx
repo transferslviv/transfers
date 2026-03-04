@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -72,18 +73,21 @@ export default function Header() {
           <svg className="absolute top-9 left-1/2 -translate-x-1/2 w-[280px] xl:w-[340px] 2xl:w-[400px] h-auto" viewBox="0 0 242 39" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 40px rgba(0,0,0,0.8))' }}>
             <path d="M241.965 19.2554C241.965 19.2554 187.799 38.5107 120.982 38.5107C54.1657 38.5107 0 19.2554 0 19.2554C0 19.2554 54.1657 0 120.982 0C187.799 0 241.965 19.2554 241.965 19.2554Z" fill="#070707" />
           </svg>
-         <img 
+         <Image 
            src="/images/logo.svg" 
            alt="TransferLviv" 
-           className="relative z-10 h-8 xl:h-10 2xl:h-12 transition-all duration-300 mt-[16px] xl:mt-[28px] 2xl:mt-[30px]"
+           width={120}
+           height={48}
+           priority
+           className="relative z-10 h-8 xl:h-10 2xl:h-12 w-auto transition-all duration-300 mt-[16px] xl:mt-[28px] 2xl:mt-[30px]"
            style={{
              filter: 'brightness(1)',
            }}
            onMouseEnter={(e) => {
-             e.currentTarget.style.filter = 'brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1000%) hue-rotate(5deg) brightness(105%) contrast(106%)';
+             (e.currentTarget as HTMLElement).style.filter = 'brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1000%) hue-rotate(5deg) brightness(105%) contrast(106%)';
            }}
            onMouseLeave={(e) => {
-             e.currentTarget.style.filter = 'brightness(1)';
+             (e.currentTarget as HTMLElement).style.filter = 'brightness(1)';
            }}
          />
         </Link>
@@ -138,7 +142,7 @@ export default function Header() {
               className="w-[35px] h-[35px] flex items-center justify-center transition-all hover:scale-110 hover:bg-[#FFAE00] bg-[#1E1D1E] p-2 rounded-[10px]"
               aria-label="Telegram - зв'язатись з нами"
             >
-              <img src="/images/socials/tg-icon.svg" alt="Telegram" className="w-[20px] h-[20px]" />
+              <Image src="/images/socials/tg-icon.svg" alt="Telegram" width={20} height={20} />
             </a>
 
             {/* WhatsApp */}
@@ -149,7 +153,7 @@ export default function Header() {
               className="w-[35px] h-[35px] flex items-center justify-center transition-all hover:scale-110 hover:bg-[#FFAE00] bg-[#1E1D1E] p-2 rounded-[10px]"
               aria-label="WhatsApp - зв'язатись з нами"
             >
-              <img src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" className="w-[20px] h-[20px]" />
+              <Image src="/images/socials/whatsapp-icon.svg" alt="WhatsApp" width={20} height={20} />
             </a>
 
             {/* Instagram */}
@@ -160,7 +164,7 @@ export default function Header() {
               className="w-[35px] h-[35px] flex items-center justify-center transition-all hover:scale-110 hover:bg-[#FFAE00] bg-[#1E1D1E] rounded-[10px] p-2"
               aria-label="Instagram - наш профіль"
             >
-              <img src="/images/socials/insta-icon.svg" alt="Instagram" className="w-[20px] h-[20px]" />
+              <Image src="/images/socials/insta-icon.svg" alt="Instagram" width={20} height={20} />
             </a>
           </div>
 
