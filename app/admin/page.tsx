@@ -42,7 +42,7 @@ export default function AdminLogin() {
     <div className="min-h-screen bg-[#DDDDDD] flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-[10px] shadow-lg w-full max-w-md">
         <h1 
-          className="text-4xl font-black text-center mb-8 uppercase"
+          className="text-4xl font-black text-center mb-8 uppercase text-[#070707]"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
           Адмін-панель
@@ -56,23 +56,23 @@ export default function AdminLogin() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-bold mb-2">Користувач</label>
+            <label className="block text-sm font-bold mb-2 text-[#070707]">Користувач</label>
             <input
               type="text"
               value={formData.username}
               onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none text-[#070707] placeholder:text-gray-400"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-bold mb-2">Пароль</label>
+            <label className="block text-sm font-bold mb-2 text-[#070707]">Пароль</label>
             <input
               type="password"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none text-[#070707] placeholder:text-gray-400"
               required
             />
           </div>

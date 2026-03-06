@@ -48,7 +48,7 @@ export default function CreateFirstAdmin() {
     <div className="min-h-screen bg-[#DDDDDD] flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-[10px] shadow-lg w-full max-w-md">
         <h1 
-          className="text-3xl font-black text-center mb-4 uppercase"
+          className="text-3xl font-black text-center mb-4 uppercase text-[#070707]"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
           Створити першого адміна
@@ -72,36 +72,36 @@ export default function CreateFirstAdmin() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-bold mb-2">Username</label>
+            <label className="block text-sm font-bold mb-2 text-[#070707]">Username</label>
             <input
               type="text"
               value={formData.username}
               onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none text-[#070707] placeholder:text-gray-400"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-bold mb-2">Email</label>
+            <label className="block text-sm font-bold mb-2 text-[#070707]">Email</label>
             <input
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none text-[#070707] placeholder:text-gray-400"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-bold mb-2">
+            <label className="block text-sm font-bold mb-2 text-[#070707]">
               Password (мінімум 6 символів)
             </label>
             <input
               type="text"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-[10px] focus:border-[#FFAE00] outline-none text-[#070707] placeholder:text-gray-400"
               required
               minLength={6}
             />
