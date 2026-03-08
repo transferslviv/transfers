@@ -268,8 +268,8 @@ export default function DirectionInfo({ id }: DirectionInfoProps) {
           className="text-[18px] md:text-[20px] xl:text-[24px] font-black leading-[100%] text-[#070707]"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
-          {content.mainTitle.before}
-          <span className="text-[#FFAE00]">{content.mainTitle.highlight}</span>
+          {content.mainTitle.before}{' '}
+          <span className="text-[#FFAE00]">{content.mainTitle.highlight}</span>{' '}
           {content.mainTitle.after}
         </h2>
 
