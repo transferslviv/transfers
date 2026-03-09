@@ -45,12 +45,12 @@ const DirectionPageSchema = new mongoose.Schema({
 const detailedContent = {
   // Україна
   kyiv: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР ЛЬВІВ–КИЇВ',
     mainTitleHighlightEn: 'LVIV–KYIV TRANSFER',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Києва з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Kyiv with full control of every stage of the trip.',
     sections: [
@@ -75,12 +75,12 @@ const detailedContent = {
     ]
   },
   bukovel: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР ЛЬВІВ–БУКОВЕЛЬ',
     mainTitleHighlightEn: 'LVIV–BUKOVEL TRANSFER',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Карпат з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to the Carpathians with full control of every stage of the trip.',
     sections: [
@@ -105,12 +105,12 @@ const detailedContent = {
     ]
   },
   odesa: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР ЛЬВІВ–ОДЕСА',
     mainTitleHighlightEn: 'LVIV–ODESA TRANSFER',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Одеси з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Odesa with full control of every stage of the trip.',
     sections: [
@@ -129,12 +129,12 @@ const detailedContent = {
     ]
   },
   'ivano-frankivsk': {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР ЛЬВІВ–ІВАНО-ФРАНКІВСЬК',
     mainTitleHighlightEn: 'LVIV–IVANO-FRANKIVSK TRANSFER',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Івано-Франківська з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Ivano-Frankivsk with full control of every stage of the trip.',
     sections: [
@@ -153,12 +153,12 @@ const detailedContent = {
     ]
   },
   ujgorod: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР ЛЬВІВ–УЖГОРОД',
     mainTitleHighlightEn: 'LVIV–UZHHOROD TRANSFER',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Ужгорода через Карпати з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Uzhhorod through the Carpathians with full control of every stage of the trip.',
     sections: [
@@ -178,12 +178,12 @@ const detailedContent = {
   },
   // Європа
   krakow: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'МІЖНАРОДНИЙ ТРАНСФЕР ЛЬВІВ–КРАКІВ',
     mainTitleHighlightEn: 'INTERNATIONAL TRANSFER LVIV–KRAKOW',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Польщі з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Poland with full control of every stage of the trip.',
     sections: [
@@ -208,12 +208,12 @@ const detailedContent = {
     ]
   },
   warsaw: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'МІЖНАРОДНИЙ ТРАНСФЕР ЛЬВІВ–ВАРШАВА',
     mainTitleHighlightEn: 'INTERNATIONAL TRANSFER LVIV–WARSAW',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Польщі з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Poland with full control of every stage of the trip.',
     sections: [
@@ -238,12 +238,12 @@ const detailedContent = {
     ]
   },
   budapest: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'МІЖНАРОДНИЙ ТРАНСФЕР ЛЬВІВ–БУДАПЕШТ',
     mainTitleHighlightEn: 'INTERNATIONAL TRANSFER LVIV–BUDAPEST',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Угорщини з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Hungary with full control of every stage of the trip.',
     sections: [
@@ -268,12 +268,12 @@ const detailedContent = {
     ]
   },
   bratislava: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'МІЖНАРОДНИЙ ТРАНСФЕР ЛЬВІВ–БРАТИСЛАВА',
     mainTitleHighlightEn: 'INTERNATIONAL TRANSFER LVIV–BRATISLAVA',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Словаччини з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Slovakia with full control of every stage of the trip.',
     sections: [
@@ -298,12 +298,12 @@ const detailedContent = {
     ]
   },
   vienna: {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'МІЖНАРОДНИЙ ТРАНСФЕР ЛЬВІВ–ВІДЕНЬ',
     mainTitleHighlightEn: 'INTERNATIONAL TRANSFER LVIV–VIENNA',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС, ПРЕМІУМ ТА VIP РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS, PREMIUM AND VIP LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка без пересадок, очікувань і компромісів у комфорті. Ви отримуєте професійного водія, подачу авто у зручний час та чітко організований маршрут до Австрії з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip without transfers, waiting and compromises in comfort. You get a professional driver, car delivery at a convenient time and a clearly organized route to Austria with full control of every stage of the trip.',
     sections: [
@@ -329,12 +329,12 @@ const detailedContent = {
   },
   // Львів
   'emily-resort': {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР ДО EMILY RESORT',
     mainTitleHighlightEn: 'TRANSFER TO EMILY RESORT',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка з професійним водієм та подачею авто у зручний час. Ми забезпечуємо комфортний трансфер до заміського готелю з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip with a professional driver and car delivery at a convenient time. We provide comfortable transfer to the suburban hotel with full control of every stage of the trip.',
     sections: [
@@ -353,12 +353,12 @@ const detailedContent = {
     ]
   },
   'edem-resort': {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР ДО EDEM RESORT',
     mainTitleHighlightEn: 'TRANSFER TO EDEM RESORT',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка з професійним водієм та подачею авто у зручний час. Ми забезпечуємо комфортний трансфер до заміського курорту з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip with a professional driver and car delivery at a convenient time. We provide comfortable transfer to the suburban resort with full control of every stage of the trip.',
     sections: [
@@ -377,12 +377,12 @@ const detailedContent = {
     ]
   },
   'train-station': {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР НА ЗАЛІЗНИЧНИЙ ВОКЗАЛ ЛЬВОВА',
     mainTitleHighlightEn: 'TRANSFER TO LVIV RAILWAY STATION',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка з професійним водієм та подачею авто у зручний час. Ми забезпечуємо пунктуальний трансфер на вокзал з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip with a professional driver and car delivery at a convenient time. We provide punctual transfer to the station with full control of every stage of the trip.',
     sections: [
@@ -401,12 +401,12 @@ const detailedContent = {
     ]
   },
   'bus-station': {
-    mainTitleBefore: 'ПРОПОНУЄМО',
-    mainTitleBeforeEn: 'WE OFFER',
+    mainTitleBefore: 'ПРОПОНУЄМО ',
+    mainTitleBeforeEn: 'WE OFFER ',
     mainTitleHighlight: 'ТРАНСФЕР НА АВТОВОКЗАЛ ЛЬВОВА',
     mainTitleHighlightEn: 'TRANSFER TO LVIV BUS STATION',
-    mainTitleAfter: 'ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
-    mainTitleAfterEn: 'FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
+    mainTitleAfter: ' ДЛЯ КЛІЄНТІВ, ЯКІ ОБИРАЮТЬ БІЗНЕС ТА ПРЕМІУМ РІВЕНЬ СЕРВІСУ.',
+    mainTitleAfterEn: ' FOR CLIENTS WHO CHOOSE BUSINESS AND PREMIUM LEVEL OF SERVICE.',
     intro: 'Це індивідуальна поїздка з професійним водієм та подачею авто у зручний час. Ми забезпечуємо своєчасний трансфер на автовокзал з повним контролем кожного етапу поїздки.',
     introEn: 'This is an individual trip with a professional driver and car delivery at a convenient time. We provide timely transfer to the bus station with full control of every stage of the trip.',
     sections: [
