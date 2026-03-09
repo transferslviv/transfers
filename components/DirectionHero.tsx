@@ -103,7 +103,15 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
             priority
             sizes="50vw"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/60" />
+          {/* Grain effect overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'repeat',
+            }}
+          />
         </div>
         <div className="relative w-1/2 h-full">
           <Image
@@ -114,7 +122,15 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
             priority
             sizes="50vw"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/60" />
+          {/* Grain effect overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'repeat',
+            }}
+          />
         </div>
       </div>
 
@@ -160,7 +176,7 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
       </a>
 
       {/* Car SVG at bottom */}
-      <div className="absolute bottom-[10px] md:bottom-[20px] left-1/2 -translate-x-1/2 z-10 w-[200px] md:w-[468px]">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-[200px] md:w-[468px]">
         <Image
           src="/images/direction/block 1 car svg.svg"
           alt="car"
