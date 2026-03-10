@@ -82,6 +82,10 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
         ? { left: transfer.image, right: transfer.image2 || transfer.image }
         : { left: '/images/direction/bg-lviv.png', right: '/images/direction/bg-lviv.png' });
 
+  // Check if we should use single image or split
+  const useSingleImage = dbData?.heroImageLeft && !dbData?.heroImageRight;
+  const singleImage = useSingleImage ? dbData.heroImageLeft : null;
+
   const subtitle = dbData?.heroSubtitle
     ? (isUa ? dbData.heroSubtitle : (dbData.heroSubtitleEn || dbData.heroSubtitle))
     : (isUa ? 'Бізнес та Преміум клас' : 'Business & Premium class');
@@ -92,35 +96,17 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
 
   return (
     <section className="relative w-full h-[500px] md:h-[calc(100vh-70px)] flex flex-col justify-center items-center gap-[40px] md:gap-[80px] px-[15px] md:px-[50px] overflow-hidden">
-      {/* Split Background */}
-      <div className="absolute inset-0 flex">
-        <div className="relative w-1/2 h-full">
+      {/* Background - Single or Split */}
+      {useSingleImage && singleImage ? (
+        // Single full-width background
+        <div className="absolute inset-0">
           <Image
-            src={heroImages.left}
-            alt="Львів"
-            fill
-            className="object-cover"
-            priority
-            sizes="50vw"
-          />
-          <div className="absolute inset-0 bg-black/60" />
-          {/* Grain effect overlay */}
-          <div 
-            className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-              backgroundRepeat: 'repeat',
-            }}
-          />
-        </div>
-        <div className="relative w-1/2 h-full">
-          <Image
-            src={heroImages.right}
+            src={singleImage}
             alt={heroTitle}
             fill
             className="object-cover"
             priority
-            sizes="50vw"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/60" />
           {/* Grain effect overlay */}
@@ -132,7 +118,49 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
             }}
           />
         </div>
-      </div>
+      ) : (
+        // Split Background (existing logic)
+        <div className="absolute inset-0 flex">
+          <div className="relative w-1/2 h-full">
+            <Image
+              src={heroImages.left}
+              alt="Львів"
+              fill
+              className="object-cover"
+              priority
+              sizes="50vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+            {/* Grain effect overlay */}
+            <div 
+              className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                backgroundRepeat: 'repeat',
+              }}
+            />
+          </div>
+          <div className="relative w-1/2 h-full">
+            <Image
+              src={heroImages.right}
+              alt={heroTitle}
+              fill
+              className="object-cover"
+              priority
+              sizes="50vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+            {/* Grain effect overlay */}
+            <div 
+              className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                backgroundRepeat: 'repeat',
+              }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Title Section */}
       <div className="relative z-10 flex flex-col items-center justify-center gap-[10px] md:gap-[20px] w-full max-w-[1615px]">
@@ -143,7 +171,7 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
           {subtitle}
         </h2>
         <h1
-          className="text-[28px] sm:text-[40px] md:text-[53px] xl:text-[55px] 2xl:text-[70px] text-white text-center font-black leading-[100%]"
+          className="text-[28px] sm:text-[40px] md:text-[53px] xl:text-[55px] 2xl:text-[70px] text-white text-center font-black leading-[100%] uppercase"
           style={{ fontFamily: 'var(--font-unbounded)' }}
         >
           {heroTitle}
