@@ -82,9 +82,29 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
         ? { left: transfer.image, right: transfer.image2 || transfer.image }
         : { left: '/images/direction/bg-lviv.png', right: '/images/direction/bg-lviv.png' });
 
+  // Responsive images for different screen sizes
+  const heroImagesResponsive = {
+    left: {
+      desktop: dbData?.heroImageLeft || heroImages.left,
+      tablet: dbData?.heroImageLeftTablet || dbData?.heroImageLeft || heroImages.left,
+      mobile: dbData?.heroImageLeftMobile || dbData?.heroImageLeftTablet || dbData?.heroImageLeft || heroImages.left,
+    },
+    right: {
+      desktop: dbData?.heroImageRight || heroImages.right,
+      tablet: dbData?.heroImageRightTablet || dbData?.heroImageRight || heroImages.right,
+      mobile: dbData?.heroImageRightMobile || dbData?.heroImageRightTablet || dbData?.heroImageRight || heroImages.right,
+    },
+  };
+
   // Check if we should use single image or split
   const useSingleImage = dbData?.heroImageLeft && !dbData?.heroImageRight;
-  const singleImage = useSingleImage ? dbData.heroImageLeft : null;
+  const singleImage = useSingleImage 
+    ? {
+        desktop: dbData.heroImageLeft,
+        tablet: dbData.heroImageLeftTablet || dbData.heroImageLeft,
+        mobile: dbData.heroImageLeftMobile || dbData.heroImageLeftTablet || dbData.heroImageLeft,
+      }
+    : null;
 
   const subtitle = dbData?.heroSubtitle
     ? (isUa ? dbData.heroSubtitle : (dbData.heroSubtitleEn || dbData.heroSubtitle))
@@ -100,14 +120,15 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
       {useSingleImage && singleImage ? (
         // Single full-width background
         <div className="absolute inset-0">
-          <Image
-            src={singleImage}
-            alt={heroTitle}
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
+          <picture>
+            <source media="(max-width: 767px)" srcSet={singleImage.mobile} />
+            <source media="(max-width: 1023px)" srcSet={singleImage.tablet} />
+            <img 
+              src={singleImage.desktop} 
+              alt={heroTitle}
+              className="w-full h-full object-cover"
+            />
+          </picture>
           <div className="absolute inset-0 bg-black/60" />
           {/* Grain effect overlay */}
           <div 
@@ -122,14 +143,15 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
         // Split Background (existing logic)
         <div className="absolute inset-0 flex">
           <div className="relative w-1/2 h-full">
-            <Image
-              src={heroImages.left}
-              alt="Львів"
-              fill
-              className="object-cover"
-              priority
-              sizes="50vw"
-            />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={heroImagesResponsive.left.mobile} />
+              <source media="(max-width: 1023px)" srcSet={heroImagesResponsive.left.tablet} />
+              <img 
+                src={heroImagesResponsive.left.desktop} 
+                alt="Львів"
+                className="w-full h-full object-cover"
+              />
+            </picture>
             <div className="absolute inset-0 bg-black/60" />
             {/* Grain effect overlay */}
             <div 
@@ -141,14 +163,15 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
             />
           </div>
           <div className="relative w-1/2 h-full">
-            <Image
-              src={heroImages.right}
-              alt={heroTitle}
-              fill
-              className="object-cover"
-              priority
-              sizes="50vw"
-            />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={heroImagesResponsive.right.mobile} />
+              <source media="(max-width: 1023px)" srcSet={heroImagesResponsive.right.tablet} />
+              <img 
+                src={heroImagesResponsive.right.desktop} 
+                alt={heroTitle}
+                className="w-full h-full object-cover"
+              />
+            </picture>
             <div className="absolute inset-0 bg-black/60" />
             {/* Grain effect overlay */}
             <div 

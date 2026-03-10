@@ -30,7 +30,11 @@ export interface IDirectionPage extends Document {
   heroCtaText: string;
   heroCtaTextEn: string;
   heroImageLeft: string;
+  heroImageLeftTablet: string;
+  heroImageLeftMobile: string;
   heroImageRight: string;
+  heroImageRightTablet: string;
+  heroImageRightMobile: string;
   // Info block
   mainTitleBefore: string;
   mainTitleBeforeEn: string;
@@ -90,7 +94,11 @@ const DirectionPageSchema = new Schema<IDirectionPage>({
   heroCtaText: { type: String, trim: true, default: 'розрахувати вартість' },
   heroCtaTextEn: { type: String, trim: true, default: 'calculate price' },
   heroImageLeft: { type: String, trim: true, default: '' },
+  heroImageLeftTablet: { type: String, trim: true, default: '' },
+  heroImageLeftMobile: { type: String, trim: true, default: '' },
   heroImageRight: { type: String, trim: true, default: '' },
+  heroImageRightTablet: { type: String, trim: true, default: '' },
+  heroImageRightMobile: { type: String, trim: true, default: '' },
   // Info block
   mainTitleBefore: { type: String, trim: true, default: '' },
   mainTitleBeforeEn: { type: String, trim: true, default: '' },

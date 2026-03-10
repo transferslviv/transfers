@@ -46,7 +46,11 @@ interface FormData {
   heroCtaText: string;
   heroCtaTextEn: string;
   heroImageLeft: string;
+  heroImageLeftTablet: string;
+  heroImageLeftMobile: string;
   heroImageRight: string;
+  heroImageRightTablet: string;
+  heroImageRightMobile: string;
   mainTitleBefore: string;
   mainTitleBeforeEn: string;
   mainTitleHighlight: string;
@@ -177,7 +181,11 @@ export default function AdminDirectionEditPage() {
   const params = useParams();
   const directionId = params.id as string;
   const fileInputLeftRef = useRef<HTMLInputElement>(null);
+  const fileInputLeftTabletRef = useRef<HTMLInputElement>(null);
+  const fileInputLeftMobileRef = useRef<HTMLInputElement>(null);
   const fileInputRightRef = useRef<HTMLInputElement>(null);
+  const fileInputRightTabletRef = useRef<HTMLInputElement>(null);
+  const fileInputRightMobileRef = useRef<HTMLInputElement>(null);
   const fileInputCardRef = useRef<HTMLInputElement>(null);
   const fileInputCard2Ref = useRef<HTMLInputElement>(null);
 
@@ -200,7 +208,11 @@ export default function AdminDirectionEditPage() {
     heroCtaText: 'розрахувати вартість',
     heroCtaTextEn: 'calculate price',
     heroImageLeft: '',
+    heroImageLeftTablet: '',
+    heroImageLeftMobile: '',
     heroImageRight: '',
+    heroImageRightTablet: '',
+    heroImageRightMobile: '',
     mainTitleBefore: '',
     mainTitleBeforeEn: '',
     mainTitleHighlight: '',
@@ -223,7 +235,7 @@ export default function AdminDirectionEditPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [isNew, setIsNew] = useState(true);
-  const [uploading, setUploading] = useState<'left' | 'right' | null>(null);
+  const [uploading, setUploading] = useState<'left' | 'leftTablet' | 'leftMobile' | 'right' | 'rightTablet' | 'rightMobile' | null>(null);
   const [viewMode, setViewMode] = useState<'edit' | 'preview'>('edit');
   const [contentLang, setContentLang] = useState<'ua' | 'en'>('ua');
 
@@ -250,7 +262,11 @@ export default function AdminDirectionEditPage() {
           heroCtaText: data.page.heroCtaText || 'розрахувати вартість',
           heroCtaTextEn: data.page.heroCtaTextEn || 'calculate price',
           heroImageLeft: data.page.heroImageLeft || '',
+          heroImageLeftTablet: data.page.heroImageLeftTablet || '',
+          heroImageLeftMobile: data.page.heroImageLeftMobile || '',
           heroImageRight: data.page.heroImageRight || '',
+          heroImageRightTablet: data.page.heroImageRightTablet || '',
+          heroImageRightMobile: data.page.heroImageRightMobile || '',
           mainTitleBefore: data.page.mainTitleBefore || '',
           mainTitleBeforeEn: data.page.mainTitleBeforeEn || '',
           mainTitleHighlight: data.page.mainTitleHighlight || '',
@@ -295,7 +311,7 @@ export default function AdminDirectionEditPage() {
     fetchDirection();
   }, [fetchDirection]);
 
-  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, side: 'left' | 'right' | 'card' | 'card2') => {
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, side: 'left' | 'leftTablet' | 'leftMobile' | 'right' | 'rightTablet' | 'rightMobile' | 'card' | 'card2') => {
     const file = e.target.files?.[0];
     if (!file) return;
     setUploading(side as any);
@@ -307,7 +323,11 @@ export default function AdminDirectionEditPage() {
       if (data.success) {
         const fieldMap: Record<string, string> = {
           left: 'heroImageLeft',
+          leftTablet: 'heroImageLeftTablet',
+          leftMobile: 'heroImageLeftMobile',
           right: 'heroImageRight',
+          rightTablet: 'heroImageRightTablet',
+          rightMobile: 'heroImageRightMobile',
           card: 'cardImage',
           card2: 'cardImage2',
         };
@@ -781,50 +801,161 @@ export default function AdminDirectionEditPage() {
           </div>
 
           {/* Hero images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-6">
+            {/* Desktop images (Left side) */}
             <div>
-              <label className={labelClass}>Фото ліва частина</label>
-              <div className="flex gap-2">
-                <input
-                  className={inputClass}
-                  value={formData.heroImageLeft}
-                  onChange={(e) => setFormData(prev => ({ ...prev, heroImageLeft: e.target.value }))}
-                  placeholder="URL або завантажте"
-                />
-                <input ref={fileInputLeftRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, 'left')} />
-                <button
-                  onClick={() => fileInputLeftRef.current?.click()}
-                  disabled={uploading === 'left'}
-                  className="px-3 py-2 bg-[#444] rounded-[8px] text-white/70 hover:text-white text-sm flex-shrink-0 transition-colors"
-                >
-                  {uploading === 'left' ? '...' : '📤'}
-                </button>
+              <h3 className="text-white/80 font-bold mb-3 text-sm uppercase tracking-wide">Ліва частина (Desktop / Tablet / Mobile)</h3>
+              <div className="space-y-3">
+                {/* Desktop Left */}
+                <div>
+                  <label className={labelClass}>📱 Desktop</label>
+                  <div className="flex gap-2">
+                    <input
+                      className={inputClass}
+                      value={formData.heroImageLeft}
+                      onChange={(e) => setFormData(prev => ({ ...prev, heroImageLeft: e.target.value }))}
+                      placeholder="URL або завантажте"
+                    />
+                    <input ref={fileInputLeftRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, 'left')} />
+                    <button
+                      onClick={() => fileInputLeftRef.current?.click()}
+                      disabled={uploading === 'left'}
+                      className="px-3 py-2 bg-[#444] rounded-[8px] text-white/70 hover:text-white text-sm flex-shrink-0 transition-colors"
+                    >
+                      {uploading === 'left' ? '...' : '📤'}
+                    </button>
+                  </div>
+                  {formData.heroImageLeft && (
+                    <img src={formData.heroImageLeft} alt="" className="mt-2 h-20 rounded-[6px] object-cover" />
+                  )}
+                </div>
+
+                {/* Tablet Left */}
+                <div>
+                  <label className={labelClass}>💻 Tablet</label>
+                  <div className="flex gap-2">
+                    <input
+                      className={inputClass}
+                      value={formData.heroImageLeftTablet}
+                      onChange={(e) => setFormData(prev => ({ ...prev, heroImageLeftTablet: e.target.value }))}
+                      placeholder="Якщо пусте — використає desktop"
+                    />
+                    <input ref={fileInputLeftTabletRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, 'leftTablet')} />
+                    <button
+                      onClick={() => fileInputLeftTabletRef.current?.click()}
+                      disabled={uploading === 'leftTablet'}
+                      className="px-3 py-2 bg-[#444] rounded-[8px] text-white/70 hover:text-white text-sm flex-shrink-0 transition-colors"
+                    >
+                      {uploading === 'leftTablet' ? '...' : '📤'}
+                    </button>
+                  </div>
+                  {formData.heroImageLeftTablet && (
+                    <img src={formData.heroImageLeftTablet} alt="" className="mt-2 h-20 rounded-[6px] object-cover" />
+                  )}
+                </div>
+
+                {/* Mobile Left */}
+                <div>
+                  <label className={labelClass}>📱 Mobile</label>
+                  <div className="flex gap-2">
+                    <input
+                      className={inputClass}
+                      value={formData.heroImageLeftMobile}
+                      onChange={(e) => setFormData(prev => ({ ...prev, heroImageLeftMobile: e.target.value }))}
+                      placeholder="Якщо пусте — використає tablet або desktop"
+                    />
+                    <input ref={fileInputLeftMobileRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, 'leftMobile')} />
+                    <button
+                      onClick={() => fileInputLeftMobileRef.current?.click()}
+                      disabled={uploading === 'leftMobile'}
+                      className="px-3 py-2 bg-[#444] rounded-[8px] text-white/70 hover:text-white text-sm flex-shrink-0 transition-colors"
+                    >
+                      {uploading === 'leftMobile' ? '...' : '📤'}
+                    </button>
+                  </div>
+                  {formData.heroImageLeftMobile && (
+                    <img src={formData.heroImageLeftMobile} alt="" className="mt-2 h-20 rounded-[6px] object-cover" />
+                  )}
+                </div>
               </div>
-              {formData.heroImageLeft && (
-                <img src={formData.heroImageLeft} alt="" className="mt-2 h-20 rounded-[6px] object-cover" />
-              )}
             </div>
+
+            {/* Desktop images (Right side) */}
             <div>
-              <label className={labelClass}>Фото права частина</label>
-              <div className="flex gap-2">
-                <input
-                  className={inputClass}
-                  value={formData.heroImageRight}
-                  onChange={(e) => setFormData(prev => ({ ...prev, heroImageRight: e.target.value }))}
-                  placeholder="URL або завантажте"
-                />
-                <input ref={fileInputRightRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, 'right')} />
-                <button
-                  onClick={() => fileInputRightRef.current?.click()}
-                  disabled={uploading === 'right'}
-                  className="px-3 py-2 bg-[#444] rounded-[8px] text-white/70 hover:text-white text-sm flex-shrink-0 transition-colors"
-                >
-                  {uploading === 'right' ? '...' : '📤'}
-                </button>
+              <h3 className="text-white/80 font-bold mb-3 text-sm uppercase tracking-wide">Права частина (Desktop / Tablet / Mobile)</h3>
+              <div className="space-y-3">
+                {/* Desktop Right */}
+                <div>
+                  <label className={labelClass}>📱 Desktop</label>
+                  <div className="flex gap-2">
+                    <input
+                      className={inputClass}
+                      value={formData.heroImageRight}
+                      onChange={(e) => setFormData(prev => ({ ...prev, heroImageRight: e.target.value }))}
+                      placeholder="URL або завантажте (якщо пусте — буде одне фото на весь екран)"
+                    />
+                    <input ref={fileInputRightRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, 'right')} />
+                    <button
+                      onClick={() => fileInputRightRef.current?.click()}
+                      disabled={uploading === 'right'}
+                      className="px-3 py-2 bg-[#444] rounded-[8px] text-white/70 hover:text-white text-sm flex-shrink-0 transition-colors"
+                    >
+                      {uploading === 'right' ? '...' : '📤'}
+                    </button>
+                  </div>
+                  {formData.heroImageRight && (
+                    <img src={formData.heroImageRight} alt="" className="mt-2 h-20 rounded-[6px] object-cover" />
+                  )}
+                </div>
+
+                {/* Tablet Right */}
+                <div>
+                  <label className={labelClass}>💻 Tablet</label>
+                  <div className="flex gap-2">
+                    <input
+                      className={inputClass}
+                      value={formData.heroImageRightTablet}
+                      onChange={(e) => setFormData(prev => ({ ...prev, heroImageRightTablet: e.target.value }))}
+                      placeholder="Якщо пусте — використає desktop"
+                    />
+                    <input ref={fileInputRightTabletRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, 'rightTablet')} />
+                    <button
+                      onClick={() => fileInputRightTabletRef.current?.click()}
+                      disabled={uploading === 'rightTablet'}
+                      className="px-3 py-2 bg-[#444] rounded-[8px] text-white/70 hover:text-white text-sm flex-shrink-0 transition-colors"
+                    >
+                      {uploading === 'rightTablet' ? '...' : '📤'}
+                    </button>
+                  </div>
+                  {formData.heroImageRightTablet && (
+                    <img src={formData.heroImageRightTablet} alt="" className="mt-2 h-20 rounded-[6px] object-cover" />
+                  )}
+                </div>
+
+                {/* Mobile Right */}
+                <div>
+                  <label className={labelClass}>📱 Mobile</label>
+                  <div className="flex gap-2">
+                    <input
+                      className={inputClass}
+                      value={formData.heroImageRightMobile}
+                      onChange={(e) => setFormData(prev => ({ ...prev, heroImageRightMobile: e.target.value }))}
+                      placeholder="Якщо пусте — використає tablet або desktop"
+                    />
+                    <input ref={fileInputRightMobileRef} type="file" accept="image/*" className="hidden" onChange={(e) => handleImageUpload(e, 'rightMobile')} />
+                    <button
+                      onClick={() => fileInputRightMobileRef.current?.click()}
+                      disabled={uploading === 'rightMobile'}
+                      className="px-3 py-2 bg-[#444] rounded-[8px] text-white/70 hover:text-white text-sm flex-shrink-0 transition-colors"
+                    >
+                      {uploading === 'rightMobile' ? '...' : '📤'}
+                    </button>
+                  </div>
+                  {formData.heroImageRightMobile && (
+                    <img src={formData.heroImageRightMobile} alt="" className="mt-2 h-20 rounded-[6px] object-cover" />
+                  )}
+                </div>
               </div>
-              {formData.heroImageRight && (
-                <img src={formData.heroImageRight} alt="" className="mt-2 h-20 rounded-[6px] object-cover" />
-              )}
             </div>
           </div>
         </div>
