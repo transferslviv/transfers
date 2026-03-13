@@ -44,6 +44,7 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
   const { settings } = useSiteSettings();
   const [dbData, setDbData] = useState<any>(null);
   const [loaded, setLoaded] = useState(false);
+  const [imagesReady, setImagesReady] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -59,10 +60,49 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
     fetchData();
   }, [id]);
 
+  // Preload images once we have final data to prevent flash
+  useEffect(() => {
+    if (!loaded) return;
+    
+    const imagesToPreload: string[] = [];
+    
+    if (dbData?.heroImageLeft) imagesToPreload.push(dbData.heroImageLeft);
+    if (dbData?.heroImageRight) imagesToPreload.push(dbData.heroImageRight);
+    
+    if (imagesToPreload.length === 0) {
+      setImagesReady(true);
+      return;
+    }
+    
+    let loadedCount = 0;
+    const total = imagesToPreload.length;
+    
+    imagesToPreload.forEach(src => {
+      const img = new window.Image();
+      img.onload = img.onerror = () => {
+        loadedCount++;
+        if (loadedCount >= total) setImagesReady(true);
+      };
+      img.src = src;
+    });
+    
+    // Fallback timeout — show images after 3s max
+    const timeout = setTimeout(() => setImagesReady(true), 3000);
+    return () => clearTimeout(timeout);
+  }, [loaded, dbData]);
+
   const transfer = getTransferById(id);
 
-  // For custom directions without static data, wait for DB data
-  if (!transfer && !loaded) return null;
+  // Wait for DB data before rendering to avoid image flash
+  if (!loaded) {
+    return (
+      <section className="relative w-full h-[500px] md:h-[calc(100vh-70px)] flex flex-col justify-center items-center bg-neutral-900">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-[200px] md:w-[468px]">
+          <Image src="/images/direction/block 1 car svg.svg" alt="car" width={468} height={113} className="w-full h-auto" />
+        </div>
+      </section>
+    );
+  }
   if (!transfer && !dbData) return null;
 
   const isUa = language === 'uk';
@@ -115,11 +155,11 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
     : (isUa ? 'розрахувати вартість' : 'calculate price');
 
   return (
-    <section className="relative w-full h-[500px] md:h-[calc(100vh-70px)] flex flex-col justify-center items-center gap-[40px] md:gap-[80px] px-[15px] md:px-[50px] overflow-hidden">
+    <section className="relative w-full h-[500px] md:h-[calc(100vh-70px)] flex flex-col justify-center items-center gap-[40px] md:gap-[80px] px-[15px] md:px-[50px] overflow-hidden bg-neutral-900">
       {/* Background - Single or Split */}
       {useSingleImage && singleImage ? (
         // Single full-width background
-        <div className="absolute inset-0">
+        <div className={`absolute inset-0 transition-opacity duration-500 ${imagesReady ? 'opacity-100' : 'opacity-0'}`}>
           <picture>
             <source media="(max-width: 767px)" srcSet={singleImage.mobile} />
             <source media="(max-width: 1023px)" srcSet={singleImage.tablet} />
@@ -127,6 +167,8 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
               src={singleImage.desktop} 
               alt={heroTitle}
               className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
             />
           </picture>
           <div className="absolute inset-0 bg-black/60" />
@@ -141,7 +183,7 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
         </div>
       ) : (
         // Split Background (existing logic)
-        <div className="absolute inset-0 flex">
+        <div className={`absolute inset-0 flex transition-opacity duration-500 ${imagesReady ? 'opacity-100' : 'opacity-0'}`}>
           <div className="relative w-1/2 h-full">
             <picture>
               <source media="(max-width: 767px)" srcSet={heroImagesResponsive.left.mobile} />
@@ -150,6 +192,8 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
                 src={heroImagesResponsive.left.desktop} 
                 alt="Львів"
                 className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
             </picture>
             <div className="absolute inset-0 bg-black/60" />
@@ -170,6 +214,8 @@ export default function DirectionHero({ id }: DirectionHeroProps) {
                 src={heroImagesResponsive.right.desktop} 
                 alt={heroTitle}
                 className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
             </picture>
             <div className="absolute inset-0 bg-black/60" />
