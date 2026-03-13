@@ -29,6 +29,8 @@ const directionTitles: Record<string, { ua: string; en: string }> = {
   'edem-resort': { ua: 'Трансфер Львів - Edem Resort', en: 'Transfer Lviv - Edem Resort' },
   'train-station': { ua: 'Трансфер - Залізничний Вокзал', en: 'Transfer - Train Station' },
   'bus-station': { ua: 'Трансфер - Автовокзал', en: 'Transfer - Bus Station' },
+  'kyiv-lviv': { ua: 'Трансфер Київ - Львів', en: 'Transfer Kyiv - Lviv' },
+  'ivano-frankivsk-lviv': { ua: 'Трансфер Івано-Франківськ - Львів', en: 'Transfer Ivano-Frankivsk - Lviv' },
 };
 
 interface DirectionHeroProps {

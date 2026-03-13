@@ -53,6 +53,24 @@ export const ukraineTransfers: Transfer[] = [
     image2: '/images/transfers/ukraine/lviv-ujgorod.webp',
     buttonText: 'дізнатися більше',
     buttonTextEn: 'learn more'
+  },
+  {
+    id: 'kyiv-lviv',
+    title: 'Київ → Львів',
+    titleEn: 'Kyiv → Lviv',
+    image: '/images/transfers/ukraine/kyiv-lviv1.webp',
+    image2: '/images/transfers/ukraine/kyiv-lviv.webp',
+    buttonText: 'дізнатися більше',
+    buttonTextEn: 'learn more'
+  },
+  {
+    id: 'ivano-frankivsk-lviv',
+    title: 'Івано-Франківськ → Львів',
+    titleEn: 'Ivano-Frankivsk → Lviv',
+    image: '/images/transfers/ukraine/lviv-frankivsc1.webp',
+    image2: '/images/transfers/ukraine/lviv-frankivsc.webp',
+    buttonText: 'дізнатися більше',
+    buttonTextEn: 'learn more'
   }
 ];
 
