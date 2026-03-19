@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: 'Преміум трансфер зі Львова до Києва, Будапешта, Відня, Кракова, Варшави та інших міст. BMW 7 Series та Mercedes S-Class, без попутників, фіксована ціна.',
     images: [
       {
-        url: '/images/hero-bg.webp',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'TransfersLviv — Преміум трансфер зі Львова',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TransfersLviv | Трансфер зі Львова по Україні та Європі',
     description: 'Преміум трансфер зі Львова до Києва, Будапешта, Відня, Кракова, Варшави та інших міст. BMW 7 Series та Mercedes S-Class.',
-    images: ['/images/hero-bg.webp'],
+    images: ['/images/og-image.jpg'],
   },
   robots: {
     index: true,
