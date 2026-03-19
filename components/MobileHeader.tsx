@@ -103,24 +103,24 @@ export default function MobileHeader() {
           </svg>
           <Link href="/">
             <Image 
-              src="/images/logo.svg" 
-              alt="TransferLviv" 
-              width={100}
-              height={25}
+              src="/transfers-logo.svg" 
+              alt="TransfersLviv" 
+              width={140}
+              height={40}
               priority
               className="relative z-10 h-[25px] md:h-[45px] w-auto transition-all duration-300 mt-[14px] md:mt-[16px]"
               style={{
                 filter: 'brightness(1)',
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.filter = 'brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1000%) hue-rotate(5deg) brightness(105%) contrast(106%)';
+                (e.currentTarget as HTMLElement).style.filter = 'brightness(1.15) drop-shadow(0 0 8px rgba(255,174,0,0.6))';
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.filter = 'brightness(1)';
               }}
               onTouchStart={(e) => {
                 const target = e.currentTarget;
-                target.style.filter = 'brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1000%) hue-rotate(5deg) brightness(105%) contrast(106%)';
+                target.style.filter = 'brightness(1.15) drop-shadow(0 0 8px rgba(255,174,0,0.6))';
                 setTimeout(() => {
                   target.style.filter = 'brightness(1)';
                 }, 200);

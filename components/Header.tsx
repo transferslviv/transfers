@@ -74,17 +74,18 @@ export default function Header() {
             <path d="M241.965 19.2554C241.965 19.2554 187.799 38.5107 120.982 38.5107C54.1657 38.5107 0 19.2554 0 19.2554C0 19.2554 54.1657 0 120.982 0C187.799 0 241.965 19.2554 241.965 19.2554Z" fill="#070707" />
           </svg>
          <Image 
-           src="/images/logo.svg" 
-           alt="TransferLviv" 
-           width={120}
+           src="/transfers-logo.svg" 
+           alt="TransfersLviv" 
+           width={160}
            height={48}
            priority
            className="relative z-10 h-8 xl:h-10 2xl:h-12 w-auto transition-all duration-300 mt-[16px] xl:mt-[28px] 2xl:mt-[30px]"
            style={{
              filter: 'brightness(1)',
+             transform: 'scale(1)',
            }}
            onMouseEnter={(e) => {
-             (e.currentTarget as HTMLElement).style.filter = 'brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1000%) hue-rotate(5deg) brightness(105%) contrast(106%)';
+             (e.currentTarget as HTMLElement).style.filter = 'brightness(1.15) drop-shadow(0 0 8px rgba(255,174,0,0.6))';
            }}
            onMouseLeave={(e) => {
              (e.currentTarget as HTMLElement).style.filter = 'brightness(1)';
