@@ -18,14 +18,14 @@ export default function Footer() {
           {/* Column 1 - Logo and Description */}
           <div className="flex flex-col gap-5">
             <Link href="/" className="group">
-              <Image src="/images/logo.svg" alt="TransferLviv" width={273} height={50} loading="lazy" className="w-[200px] xl:w-[240px] 2xl:w-[273px] h-auto group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:saturate-[5000%] group-hover:hue-rotate-[-10deg] transition-all" />
+              <Image src="/transfers-logo.svg" alt="TransfersLviv" width={273} height={50} loading="lazy" className="w-[200px] xl:w-[240px] 2xl:w-[273px] h-auto group-hover:brightness-110 transition-all" style={{ filter: 'drop-shadow(0 0 0px transparent)' }} onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.filter = 'brightness(1.15) drop-shadow(0 0 8px rgba(255,174,0,0.5))'; }} onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.filter = 'none'; }} />
             </Link>
             <div className="flex flex-col gap-[10px]">
               <p 
                 className="text-white text-xs xl:text-sm 2xl:text-base leading-[120%] uppercase"
                 style={{ fontFamily: 'var(--font-unbounded)' }}
               >
-                <span className="font-black">TransferLviv</span>
+                <span className="font-black">TransfersLviv</span>
                 <span className="font-light"> —</span><br />
                 <span className="font-light">{t('comfortableRentalLine1')}</span><br />
                 <span className="font-light">{t('comfortableRentalLine2')}</span>
@@ -78,7 +78,7 @@ export default function Footer() {
                     {t('email')}
                   </span>
                   <Link 
-                  href="mailto:rentalviv@gmail.com"
+                  href="mailto:order@transferslviv.com"
                   className="flex items-center gap-[10px] group transition-colors"
                   >
                     <div className="w-[35px] h-[35px] xl:w-[38px] 2xl:w-[40px] xl:h-[38px] 2xl:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
@@ -88,7 +88,7 @@ export default function Footer() {
                       className="text-white text-xs xl:text-sm 2xl:text-base font-black leading-[120%] group-hover:text-[#FFAE00] transition-colors"
                       style={{ fontFamily: 'var(--font-unbounded)' }}
                     >
-                      rentalviv@gmail.com
+                      order@transferslviv.com
                     </span>
                   </Link>
                 </div>
@@ -181,14 +181,14 @@ export default function Footer() {
         {/* Logo and Description - at top on mobile/tablet */}
         <div className="xl:hidden flex flex-col md:flex-row md:items-center gap-[15px] md:gap-[50px]">
           {/* Логотип */}
-          <Image src="/images/logo.svg" alt="TransferLviv" width={309} height={50} loading="lazy" className="w-[205px] md:w-[309px] h-auto" />
+          <Image src="/transfers-logo.svg" alt="TransfersLviv" width={309} height={50} loading="lazy" className="w-[205px] md:w-[309px] h-auto" />
           
           {/* Текст */}
           <p 
             className="text-white text-[10px] md:text-base leading-[120%] uppercase"
             style={{ fontFamily: 'var(--font-unbounded)' }}
           >
-            <span className="font-black">TransferLviv</span>
+            <span className="font-black">TransfersLviv</span>
             <span className="font-light"> —</span><br />
             <span className="font-light">{t('comfortableRentalLine1')}</span><br />
             <span className="font-light">{t('comfortableRentalLine2')}</span>
@@ -232,7 +232,7 @@ export default function Footer() {
                 {t('email')}
               </span>
               <Link 
-                href="mailto:rentalviv@gmail.com"
+                href="mailto:order@transferslviv.com"
                 className="flex items-center gap-[10px]"
               >
                 <div className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#1E1D1E] p-2 rounded-[10px] hover:scale-110 hover:bg-[#FFAE00] transition-all">
@@ -242,7 +242,7 @@ export default function Footer() {
                   className="text-white text-[12px] md:text-base font-black leading-[120%]"
                   style={{ fontFamily: 'var(--font-unbounded)' }}
                 >
-                  rentalviv@gmail.com
+                  order@transferslviv.com
                 </span>
               </Link>
             </div>
