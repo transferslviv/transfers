@@ -4,7 +4,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="admin-page">
+    <div className="admin-page text-[#070707]">
       {children}
     </div>
   );

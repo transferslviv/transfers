@@ -243,7 +243,7 @@ function AdminForm({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-[10px] p-8 max-w-md w-full">
+      <div className="bg-white rounded-[10px] p-8 max-w-md w-full text-[#070707]">
         <h2 
           className="text-3xl font-black mb-6 uppercase"
           style={{ fontFamily: 'var(--font-unbounded)' }}

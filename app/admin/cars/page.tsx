@@ -283,7 +283,7 @@ export default function AdminCarsPage() {
       {/* Car Form Modal */}
       {showForm && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-start justify-center overflow-y-auto py-8">
-          <div className="bg-white rounded-[10px] p-8 max-w-3xl w-full mx-4 relative">
+          <div className="bg-white rounded-[10px] p-8 max-w-3xl w-full mx-4 relative text-[#070707]">
             <button
               onClick={() => setShowForm(false)}
               className="absolute top-4 right-4 text-3xl text-gray-500 hover:text-black transition-colors"
